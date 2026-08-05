@@ -284,6 +284,15 @@
   .horarios{ margin-top:30px; }
   .horarios .h-row{ display:flex; justify-content:space-between; padding:10px 0; border-top:1px solid rgba(246,241,228,.15); font-size:.92rem;}
 
+  /* ---------- AGENDA ---------- */
+  .agenda-frame{
+  width:100%;
+  overflow:hidden;
+}
+@media(max-width:600px){
+  .agenda-frame iframe{ height:600px; }
+}
+
   /* ---------- MÍDIA ---------- */
   .midia-grid{ display:grid; grid-template-columns:repeat(4,1fr); grid-auto-rows:160px; gap:14px; }
   .midia-grid div{ overflow:hidden; position:relative; background:var(--verde-medio); }
@@ -355,10 +364,10 @@
     </a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#historia">Nossa História</a></li>
-      <li><a href="#agenda">Agenda</a></li>
+      <li><a href="https://agendaadqb.netlify.app/" target="_blank" rel="noopener">Agenda</a></li>
       <li><a href="#congregacoes">Congregações</a></li>
       <li><a href="#missoes">Missões</a></li>
-      <li><a href="#adqb">ADQB</a></li>
+      <li><a href="#Diretoria">Diretoria</a></li>
       <li><a href="#sobre">Sobre</a></li>
       <li><a href="#midia">Mídia</a></li>
       <li><a href="#dizimos" class="nav-cta">Dízimos e Ofertas</a></li>
@@ -371,7 +380,7 @@
   <div class="hero-cta-row">
     <div class="wrap">
       <a href="#historia" class="btn btn-gold">Nossa História</a>
-      <a href="#sobre" class="btn btn-ghost">Horários de Culto</a>
+      <a href="#sobre" class="btn btn-ghost">Sobre nós</a>
       <a href="#dizimos" class="btn btn-ghost">Dízimos e Ofertas</a>
     </div>
   </div>
@@ -535,9 +544,9 @@
     <div class="pix-card reveal">
       <h3>Contribua via PIX</h3>
       <div class="pix-row"><span>Chave PIX</span><span>41 99503-0030</span></div>
-      <div class="pix-row"><span>Favorecido</span><span>Assembleia de Deus em Quatro Barras</span></div>
+      <div class="pix-row"><span>Assembleia de Deus em Quatro Barras</span></div>
       <div class="pix-row"><span>Banco</span><span>Itaú</span></div>
-      <div class="qr-box">Espaço reservado para o QR Code do PIX</div>
+      <div class="qr-box">images/pix</div>
     </div>
   </div>
 </section>
@@ -575,11 +584,11 @@
   </div>
 </section>
 
-<!-- ================= ADQB ================= -->
-<section id="adqb">
+<!-- ================= Diretoria ================= -->
+<section id="Diretoria">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="eyebrow">ADQB</span>
+      <span class="eyebrow">Diretoria</span>
       <h2>Diretoria da ADQB</h2>
       <p>Espaço reservado para a Diretoria ADQB.</p>
     </div>
@@ -621,11 +630,6 @@
       </div>
       </div>
     </div>
-    <div class="info-strip reveal">
-      <div class="item"><span class="eyebrow">CNPJ</span><p>[inserir CNPJ, se aplicável]</p></div>
-      <div class="item"><span class="eyebrow">Fundação</span><p>[inserir informação institucional]</p></div>
-      <div class="item"><span class="eyebrow">Contato</span><p>[inserir e-mail / telefone]</p></div>
-    </div>
   </div>
 </section>
 
@@ -645,14 +649,6 @@
         <div class="valor"><h4>Unidade</h4><p>Uma só igreja, em diversas congregações, caminhando juntas.</p></div>
         <div class="valor"><h4>Missão</h4><p>Compromisso em levar o evangelho a cada geração e a cada bairro.</p></div>
       </div>
-
-      <div class="horarios">
-        <div class="h-row"><span>Culto da Palavra</span><span>Todas às terças-feiras às 20h00</span></div>
-        <div class="h-row"><span>Culto Koinonia</span><span>1° sábado do mês as 19h30</span></div>
-        <div class="h-row"><span>Escola Bíblica Dominical</span><span>09h20</span></div>
-        <div class="h-row"><span>Cultos aos Domingos</span><span>19h00</span></div>
-        
-      </div>
     </div>
   </div>
 </section>
@@ -669,14 +665,18 @@
       <div class="g1"><img src="images/ADQB SEDE.png" alt="Fachada da sede da ADQB"></div>
       <div><img src="images/1 igreja.jpg" alt="Primeiro templo da ADQB"></div>
       <div class="video-embed">
-        <div class="play-ico">▶</div>
+        <div class="https://www.youtube.com/live/S77RwvbQv2o?si=pCs4Qo2hiw39Vosh">▶</div>
         <span>Vídeo do YouTube</span>
       </div>
-      <div class="g2"><img src="images/bleia.png" alt="Celebração dos 115 anos"></div>
-      <div class="video-embed">
-        <div class="play-ico">▶</div>
-        <span>Culto ao vivo</span>
-      </div>
+      <div class="video-embed" style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden;">
+  <iframe
+    style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;"
+    src="https://www.youtube.com/embed/live_stream?channel=UCNUiTB5HLrpakeD554pqdkg"
+    title="Culto ao vivo - ADQB"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+  </iframe>
+</div>
     </div>
   </div>
 </section>
@@ -730,7 +730,7 @@
         <h5>Contato</h5>
         <ul>
           <li>Rua Manoel Alves dos Santos. n° 5 - Jardim Pinheiros</li>
-          <li>(41) 995030030</li>
+          <li>(41) 99503-0030</li>
           <li>adqb.adm@hotmail.com</li>
         </ul>
       </div>
