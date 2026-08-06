@@ -133,6 +133,29 @@
   .ticker span.sep{ color: var(--verde-suave); }
   @keyframes scroll-left{ from{transform:translateX(0);} to{transform:translateX(-50%);} }
 
+   /* --------- SOCIAIS ---------- */
+  .social-bar{
+  background: var(--verde-profundo); color:var(--marfim); padding:70px 0 30px;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(201,165,74,.15);
+}
+.socials-center{
+  display:flex;
+  justify-content:center;
+  gap:16px;
+  margin:0 auto;
+}
+.socials-center a{
+  width:44px; height:44px; border:1px solid rgba(246,241,228,.25); border-radius:50%;
+  display:flex; align-items:center; justify-content:center; transition:.3s;
+}
+.socials-center a:hover{ border-color:var(--dourado); background:var(--dourado); color:var(--preto); }
+.socials-center svg{ width:18px; height:18px; fill:currentColor; }
+.socials-bottom{ 
+  border-top:1px solid rgba(246,241,228,.12); padding-top:24px; display:flex; justify-content:space-between;
+    flex-wrap:wrap; gap:10px; font-size:.78rem; opacity:.55;
+}
+
   /* ---------- SECTION shells ---------- */
   section{ padding:110px 0; position:relative; }
   section.dark{ background:var(--verde-profundo); color:var(--marfim); }
@@ -145,7 +168,7 @@
   .reveal{ opacity:0; transform:translateY(28px); transition: opacity .8s ease, transform .8s ease; }
   .reveal.in{ opacity:1; transform:translateY(0); }
 
-  /* ---------- HISTÓRIA timeline ---------- */
+  /* ---------- HISTÓRIA timeline ---------- */ 
   .timeline{ position:relative; }
   .timeline-line{
     position:absolute; left:50%; top:0; bottom:0; width:2px; transform:translateX(-50%);
@@ -376,6 +399,7 @@
   </nav>
 </header>
 
+
 <section class="hero" id="inicio">
   <div class="hero-cta-row">
     <div class="wrap">
@@ -400,10 +424,35 @@
   </div>
 </div>
 
-<!-- ================= HISTÓRIA ================= -->
-<section class="dark" id="historia">
+<!-- ================= REDES SOCIAIS ================= -->
+<div class="social-bar">
   <div class="wrap">
-    <div class="sec-head reveal">
+    <div class="socials socials-center">
+      <a href="https://www.instagram.com/adqb_ofc" aria-label="Instagram" title="Instagram">
+        <svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.85.07 1.17.05 2.02.24 2.72.5.75.28 1.36.66 1.97 1.27.6.6.98 1.21 1.27 1.96.27.7.46 1.55.5 2.72.06 1.25.07 1.65.07 4.85s0 3.6-.07 4.85c-.05 1.17-.23 2.02-.5 2.72a5.4 5.4 0 0 1-1.27 1.97c-.6.6-1.22.98-1.97 1.27-.7.27-1.55.46-2.72.5-1.25.06-1.65.07-4.85.07s-3.6 0-4.85-.07c-1.17-.05-2.02-.23-2.72-.5a5.4 5.4 0 0 1-1.96-1.27 5.4 5.4 0 0 1-1.27-1.97c-.27-.7-.46-1.55-.5-2.72C2.2 15.6 2.2 15.2 2.2 12s0-3.6.07-4.85c.05-1.17.24-2.02.5-2.72.28-.75.66-1.36 1.27-1.96A5.4 5.4 0 0 1 6.02 1.2c.7-.26 1.55-.45 2.72-.5C10 2.2 10.4 2.2 12 2.2zm0 1.8c-3.15 0-3.52 0-4.76.07-1 .04-1.55.2-1.9.34-.48.19-.83.41-1.19.77-.36.36-.58.71-.77 1.19-.14.36-.3.9-.34 1.9-.06 1.24-.07 1.61-.07 4.76s0 3.52.07 4.76c.05 1 .2 1.55.34 1.9.19.48.41.83.77 1.19.36.36.71.58 1.19.77.36.14.9.3 1.9.34 1.24.06 1.61.07 4.76.07s3.52 0 4.76-.07c1-.05 1.55-.2 1.9-.34.48-.19.83-.41 1.19-.77.36-.36.58-.71.77-1.19.14-.36.3-.9.34-1.9.06-1.24.07-1.61.07-4.76s0-3.52-.07-4.76c-.05-1-.2-1.55-.34-1.9a3.6 3.6 0 0 0-.77-1.19 3.6 3.6 0 0 0-1.19-.77c-.36-.14-.9-.3-1.9-.34-1.24-.06-1.61-.07-4.76-.07zm0 4.16a4.85 4.85 0 1 1 0 9.7 4.85 4.85 0 0 1 0-9.7zm0 1.8a3.05 3.05 0 1 0 0 6.1 3.05 3.05 0 0 0 0-6.1zm5.04-2.02a1.13 1.13 0 1 1-2.27 0 1.13 1.13 0 0 1 2.27 0z"/></svg>
+      </a>
+      <a href="https://www.youtube.com/@ad.quatrobarras" aria-label="YouTube" title="YouTube">
+        <svg viewBox="0 0 24 24"><path d="M23 12s0-3.4-.43-5c-.24-.9-.94-1.6-1.84-1.84C19.13 4.72 12 4.72 12 4.72s-7.13 0-8.73.44c-.9.24-1.6.94-1.84 1.84C1 8.6 1 12 1 12s0 3.4.43 5c.24.9.94 1.6 1.84 1.84 1.6.44 8.73.44 8.73.44s7.13 0 8.73-.44c.9-.24 1.6-.94 1.84-1.84.43-1.6.43-5 .43-5zM9.8 15.4V8.6L15.8 12l-6 3.4z"/></svg>
+      </a>
+      <a href="https://www.facebook.com/AssembleiaQuatroBarras" aria-label="Facebook" title="Facebook">
+        <svg viewBox="0 0 24 24"><path d="M13.5 21v-8.1h2.72l.4-3.16h-3.12V7.7c0-.92.26-1.54 1.57-1.54h1.68V3.34C15.86 3.24 14.9 3.15 13.8 3.15c-2.3 0-3.87 1.4-3.87 3.98v2.6H7.2v3.17h2.73V21h3.57z"/></svg>
+      </a>
+      <a href="https://www.tiktok.com/@radio.koinonia?_t=ZM-90oi5aqWAiy&_r=1" aria-label="TikTok" title="TikTok">
+        <svg viewBox="0 0 24 24"><path d="M16.5 3c.3 2.16 1.7 3.66 3.9 3.8v2.9c-1.34.03-2.53-.4-3.87-1.2v6.4c0 3.5-2.5 5.85-5.65 5.85-1.4 0-2.72-.5-3.72-1.42a5.86 5.86 0 0 1-1.7-4.36c0-3.24 2.6-5.85 5.75-5.85.3 0 .6.02.9.07v2.98a3 3 0 0 0-.9-.14 3 3 0 0 0-2.94 3c0 1.66 1.32 3 2.94 3a2.9 2.9 0 0 0 2.9-2.9V3h2.4z"/></svg>
+      </a>
+      <a href="https://wa.me/41995030030" aria-label="WhatsApp" title="WhatsApp">
+        <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.28-.14-1.65-.82-1.9-.9-.26-.1-.44-.14-.63.13-.18.28-.72.9-.88 1.08-.16.18-.32.2-.6.07-.28-.14-1.17-.43-2.23-1.37a8.35 8.35 0 0 1-1.55-1.92c-.16-.28-.02-.43.12-.57.13-.13.28-.32.42-.5.14-.16.18-.28.28-.46.1-.18.05-.34-.02-.48-.07-.14-.63-1.5-.86-2.06-.23-.55-.46-.47-.63-.48h-.54c-.18 0-.48.07-.73.34-.25.28-.96.94-.96 2.3s.98 2.66 1.12 2.84c.14.18 1.93 2.94 4.67 4.13.65.28 1.16.45 1.56.58.65.2 1.25.18 1.72.1.52-.08 1.65-.67 1.88-1.32.23-.65.23-1.2.16-1.32-.07-.12-.25-.2-.53-.34zM12.02 2C6.5 2 2 6.48 2 12c0 1.9.53 3.66 1.44 5.17L2 22l4.96-1.4A9.9 9.9 0 0 0 12.02 22C17.53 22 22 17.52 22 12S17.53 2 12.02 2zm0 18.1c-1.7 0-3.28-.5-4.6-1.36l-.33-.2-3 .85.8-2.95-.2-.34A8.1 8.1 0 0 1 3.9 12c0-4.5 3.63-8.1 8.12-8.1 4.48 0 8.1 3.6 8.1 8.1 0 4.48-3.62 8.1-8.1 8.1z"/></svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ================= HISTÓRIA ================= -->
+ 
+<section class="dark" id="historia">
+  
+  <div class="wrap">
+    
       <span class="eyebrow">Nossa história</span>
       <h2>Uma trajetória de <span class="script">fé</span> em Quatro Barras</h2>
       <p>De um templo simples erguido pelas mãos da comunidade até a casa que recebe a igreja hoje, cada etapa carrega a mesma missão: levar o evangelho e transformar vidas.</p>
@@ -471,7 +520,7 @@
     <div class="sec-head reveal">
       <span class="eyebrow">Onde estamos</span>
       <h2>Nossas congregações</h2>
-      <p>A ADQB reúne a igreja sede e as congregações espalhadas pelos bairros de Quatro Barras. Substitua os cartões abaixo pelos endereços, horários e responsáveis reais de cada congregação.</p>
+      <p>A ADQB reúne a igreja sede e as congregações espalhadas pelos bairros de Quatro Barras. Acesse a aba Agenda para visualizar a agenda do campo e congregações para obter informações sobre os horários.</p>
     </div>
     <div class="cong-grid">
       <div class="cong-card reveal">
@@ -699,23 +748,6 @@
           <strong>ADQB</strong>
         </div>
         <p style="font-size:.88rem; opacity:.7; max-width:280px;">Assembleia de Deus em Quatro Barras. 115 anos de fé, unidade e missão, levando o evangelho e transformando vidas e nações.</p>
-        <div class="socials">
-          <a href="https://www.instagram.com/adqb_ofc" aria-label="Instagram" title="Instagram">
-            <svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.85.07 1.17.05 2.02.24 2.72.5.75.28 1.36.66 1.97 1.27.6.6.98 1.21 1.27 1.96.27.7.46 1.55.5 2.72.06 1.25.07 1.65.07 4.85s0 3.6-.07 4.85c-.05 1.17-.23 2.02-.5 2.72a5.4 5.4 0 0 1-1.27 1.97c-.6.6-1.22.98-1.97 1.27-.7.27-1.55.46-2.72.5-1.25.06-1.65.07-4.85.07s-3.6 0-4.85-.07c-1.17-.05-2.02-.23-2.72-.5a5.4 5.4 0 0 1-1.96-1.27 5.4 5.4 0 0 1-1.27-1.97c-.27-.7-.46-1.55-.5-2.72C2.2 15.6 2.2 15.2 2.2 12s0-3.6.07-4.85c.05-1.17.24-2.02.5-2.72.28-.75.66-1.36 1.27-1.96A5.4 5.4 0 0 1 6.02 1.2c.7-.26 1.55-.45 2.72-.5C10 2.2 10.4 2.2 12 2.2zm0 1.8c-3.15 0-3.52 0-4.76.07-1 .04-1.55.2-1.9.34-.48.19-.83.41-1.19.77-.36.36-.58.71-.77 1.19-.14.36-.3.9-.34 1.9-.06 1.24-.07 1.61-.07 4.76s0 3.52.07 4.76c.05 1 .2 1.55.34 1.9.19.48.41.83.77 1.19.36.36.71.58 1.19.77.36.14.9.3 1.9.34 1.24.06 1.61.07 4.76.07s3.52 0 4.76-.07c1-.05 1.55-.2 1.9-.34.48-.19.83-.41 1.19-.77.36-.36.58-.71.77-1.19.14-.36.3-.9.34-1.9.06-1.24.07-1.61.07-4.76s0-3.52-.07-4.76c-.05-1-.2-1.55-.34-1.9a3.6 3.6 0 0 0-.77-1.19 3.6 3.6 0 0 0-1.19-.77c-.36-.14-.9-.3-1.9-.34-1.24-.06-1.61-.07-4.76-.07zm0 4.16a4.85 4.85 0 1 1 0 9.7 4.85 4.85 0 0 1 0-9.7zm0 1.8a3.05 3.05 0 1 0 0 6.1 3.05 3.05 0 0 0 0-6.1zm5.04-2.02a1.13 1.13 0 1 1-2.27 0 1.13 1.13 0 0 1 2.27 0z"/></svg>
-          </a>
-          <a href="https://www.youtube.com/@ad.quatrobarras" aria-label="YouTube" title="YouTube">
-            <svg viewBox="0 0 24 24"><path d="M23 12s0-3.4-.43-5c-.24-.9-.94-1.6-1.84-1.84C19.13 4.72 12 4.72 12 4.72s-7.13 0-8.73.44c-.9.24-1.6.94-1.84 1.84C1 8.6 1 12 1 12s0 3.4.43 5c.24.9.94 1.6 1.84 1.84 1.6.44 8.73.44 8.73.44s7.13 0 8.73-.44c.9-.24 1.6-.94 1.84-1.84.43-1.6.43-5 .43-5zM9.8 15.4V8.6L15.8 12l-6 3.4z"/></svg>
-          </a>
-          <a href="https://www.facebook.com/AssembleiaQuatroBarras" aria-label="Facebook" title="Facebook">
-            <svg viewBox="0 0 24 24"><path d="M13.5 21v-8.1h2.72l.4-3.16h-3.12V7.7c0-.92.26-1.54 1.57-1.54h1.68V3.34C15.86 3.24 14.9 3.15 13.8 3.15c-2.3 0-3.87 1.4-3.87 3.98v2.6H7.2v3.17h2.73V21h3.57z"/></svg>
-          </a>
-          <a href="https://www.tiktok.com/@radio.koinonia?_t=ZM-90oi5aqWAiy&amp;_r=1" aria-label="TikTok" title="TikTok">
-            <svg viewBox="0 0 24 24"><path d="M16.5 3c.3 2.16 1.7 3.66 3.9 3.8v2.9c-1.34.03-2.53-.4-3.87-1.2v6.4c0 3.5-2.5 5.85-5.65 5.85-1.4 0-2.72-.5-3.72-1.42a5.86 5.86 0 0 1-1.7-4.36c0-3.24 2.6-5.85 5.75-5.85.3 0 .6.02.9.07v2.98a3 3 0 0 0-.9-.14 3 3 0 0 0-2.94 3c0 1.66 1.32 3 2.94 3a2.9 2.9 0 0 0 2.9-2.9V3h2.4z"/></svg>
-          </a>
-          <a href="https://wa.me/41995030030" aria-label="WhatsApp" title="WhatsApp">
-            <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.28-.14-1.65-.82-1.9-.9-.26-.1-.44-.14-.63.13-.18.28-.72.9-.88 1.08-.16.18-.32.2-.6.07-.28-.14-1.17-.43-2.23-1.37a8.35 8.35 0 0 1-1.55-1.92c-.16-.28-.02-.43.12-.57.13-.13.28-.32.42-.5.14-.16.18-.28.28-.46.1-.18.05-.34-.02-.48-.07-.14-.63-1.5-.86-2.06-.23-.55-.46-.47-.63-.48h-.54c-.18 0-.48.07-.73.34-.25.28-.96.94-.96 2.3s.98 2.66 1.12 2.84c.14.18 1.93 2.94 4.67 4.13.65.28 1.16.45 1.56.58.65.2 1.25.18 1.72.1.52-.08 1.65-.67 1.88-1.32.23-.65.23-1.2.16-1.32-.07-.12-.25-.2-.53-.34zM12.02 2C6.5 2 2 6.48 2 12c0 1.9.53 3.66 1.44 5.17L2 22l4.96-1.4A9.9 9.9 0 0 0 12.02 22C17.53 22 22 17.52 22 12S17.53 2 12.02 2zm0 18.1c-1.7 0-3.28-.5-4.6-1.36l-.33-.2-3 .85.8-2.95-.2-.34A8.1 8.1 0 0 1 3.9 12c0-4.5 3.63-8.1 8.12-8.1 4.48 0 8.1 3.6 8.1 8.1 0 4.48-3.62 8.1-8.1 8.1z"/></svg>
-          </a>
-        </div>
       </div>
       <div>
         <h5>Navegação</h5>
