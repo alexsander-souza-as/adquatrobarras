@@ -151,10 +151,7 @@
 }
 .socials-center a:hover{ border-color:var(--dourado); background:var(--dourado); color:var(--preto); }
 .socials-center svg{ width:18px; height:18px; fill:currentColor; }
-.socials-bottom{ 
-  border-top:1px solid rgba(246,241,228,.12); padding-top:24px; display:flex; justify-content:space-between;
-    flex-wrap:wrap; gap:10px; font-size:.78rem; opacity:.55;
-}
+
 
   /* ---------- SECTION shells ---------- */
   section{ padding:110px 0; position:relative; }
@@ -270,9 +267,21 @@
   .pix-row span:first-child{ opacity:.6; }
   .pix-row span:last-child{ font-weight:600; }
   .qr-box{
-    margin-top:22px; border:1.5px dashed rgba(13,40,24,.3); height:150px; display:flex;
-    align-items:center; justify-content:center; text-align:center; font-size:.78rem; opacity:.55; padding:10px;
-  }
+  margin-top:22px;
+  border:1px solid rgba(13,40,24,.15);
+  background:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:16px;
+  border-radius:4px;
+}
+.qr-box img{
+  width:100%;
+  max-width:220px;
+  height:auto;
+  display:block;
+}
 
   /* ---------- MISSÕES ---------- */
   .missoes-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:24px; margin-top:10px;}
@@ -282,20 +291,61 @@
   .miss-card p{ font-size:.88rem; color:var(--texto-claro); }
 
   /* ---------- ABQB / Liderança ---------- */
-  .lideranca-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:24px; }
-  .lider-card{ background:var(--marfim); padding:28px 22px; text-align:center; border:1px solid rgba(13,40,24,.1); }
-  .lider-avatar{
-    width:74px; height:74px; border-radius:50%; margin:0 auto 16px; background:var(--verde-profundo);
-    display:flex; align-items:center; justify-content:center; color:var(--dourado); font-family:var(--serif); font-size:1.6rem;
-  }
-  .lider-card h4{ font-size:1.05rem; margin-bottom:4px; }
-  .lider-card .role{ font-size:.72rem; letter-spacing:.1em; text-transform:uppercase; color:var(--dourado); font-weight:700; }
-  .info-strip{
-    margin-top:60px; display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:24px;
-    border-top:1px solid rgba(13,40,24,.12); padding-top:36px;
-  }
-  .info-strip .item .eyebrow{ color:var(--dourado); }
-  .info-strip .item p{ font-size:.92rem; margin-top:6px; opacity:.75; }
+  .carousel-wrap{
+  position:relative;
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.lideranca-carousel{
+  display:flex;
+  gap:20px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  scroll-behavior:smooth;
+  padding:6px 4px 20px;
+  -webkit-overflow-scrolling:touch;
+}
+.lideranca-carousel::-webkit-scrollbar{ height:6px; }
+.lideranca-carousel::-webkit-scrollbar-thumb{ background:var(--dourado-suave); border-radius:10px; }
+.lideranca-carousel::-webkit-scrollbar-track{ background:transparent; }
+
+.lideranca-carousel .lider-card{
+  background:var(--marfim); padding:32px 22px 28px; text-align:center; border:1px solid rgba(13,40,24,.1);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.carousel-btn{
+  flex:0 0 auto;
+  width:42px; height:42px;
+  border-radius:50%;
+  border:1px solid rgba(13,40,24,.2);
+  background:var(--marfim);
+  color:var(--verde-profundo);
+  font-size:1.4rem;
+  line-height:1;
+  cursor:pointer;
+  transition:.3s;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.carousel-btn:hover{ background:var(--dourado); border-color:var(--dourado); color:var(--preto); }
+
+@media(max-width:600px){
+  .carousel-btn{ display:none; }
+}
+.lider-foto{
+  width:90px; height:90px; border-radius:50%;
+  margin:0 auto 16px;
+  object-fit:cover;
+  border:2px solid var(--dourado-suave);
+  display:block;
+  overflow:hidden;
+  background:var(--verde-profundo);
+}
 
   /* ---------- SOBRE ---------- */
   .sobre-layout{ display:grid; grid-template-columns:.9fr 1.1fr; gap:60px; align-items:center; }
@@ -452,15 +502,12 @@
 <section class="dark" id="historia">
   
   <div class="wrap">
-    
       <span class="eyebrow">Nossa história</span>
       <h2>Uma trajetória de <span class="script">fé</span> em Quatro Barras</h2>
       <p>De um templo simples erguido pelas mãos da comunidade até a casa que recebe a igreja hoje, cada etapa carrega a mesma missão: levar o evangelho e transformar vidas.</p>
     </div>
-
     <div class="timeline">
       <div class="timeline-line"></div>
-
       <div class="tl-item reveal">
         <div class="tl-media"></div>
         <div class="tl-dot"></div>
@@ -500,13 +547,13 @@
         <div class="tl-media">
           <figure class="tl-photo">
             <img src="images/sede.jpg" alt="Sede atual da Assembleia de Deus em Quatro Barras">
-            <figcaption>A sede da ADQB hoje</figcaption>
+            <figcaption>O igreja Sede da ADQB hoje</figcaption>
           </figure>
         </div>
         <div class="tl-dot"></div>
         <div class="tl-text">
           <span class="eyebrow">A mesma fé, uma nova casa</span>
-          <h3>A sede que recebe a igreja hoje</h3>
+          <h3>A Sede que recebe a igreja hoje</h3>
           <p>Hoje a ADQB conta com um templo sede que reflete o cuidado e o crescimento da nossa história — de portas abertas para receber quem chega, do jeito que sempre foi.</p>
         </div>
       </div>
@@ -520,14 +567,14 @@
     <div class="sec-head reveal">
       <span class="eyebrow">Onde estamos</span>
       <h2>Nossas congregações</h2>
-      <p>A ADQB reúne a igreja sede e as congregações espalhadas pelos bairros de Quatro Barras. Acesse a aba Agenda para visualizar a agenda do campo e congregações para obter informações sobre os horários.</p>
+      <p>A ADQB reúne a igreja Sede e as Congregações pelos bairros de Quatro Barras. Acesse a aba Agenda para visualizar a agenda do campo e a agenda das congregações para obter informações sobre os horários.</p>
     </div>
     <div class="cong-grid">
       <div class="cong-card reveal">
         <span class="tag">Sede</span>
         <h3>Sede</h3>
         <p>Endereço: Rua Manoel Alves dos Santos, n° 5 - Jardim Pinheiros</p>
-        <p>Pastor local: Pastor Presidente Gilson Schinemann</p>
+        <p>Pastor local: Pr. Presidente Gilson Schinemann</p>
       </div>
       <div class="cong-card reveal">
         <span class="tag">Borda do Campo</span>
@@ -595,7 +642,7 @@
       <div class="pix-row"><span>Chave PIX</span><span>41 99503-0030</span></div>
       <div class="pix-row"><span>Assembleia de Deus em Quatro Barras</span></div>
       <div class="pix-row"><span>Banco</span><span>Itaú</span></div>
-      <div class="qr-box">images/pix</div>
+      <div class="qr-box"><img src="images/PIX ADQB.png" alt="QR Code para pagamento via PIX - ADQB" width="220" height="220"></div>
     </div>
   </div>
 </section>
@@ -634,53 +681,49 @@
 </section>
 
 <!-- ================= Diretoria ================= -->
-<section id="Diretoria">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Diretoria</span>
-      <h2>Diretoria da ADQB</h2>
-      <p>Espaço reservado para a Diretoria ADQB.</p>
-    </div>
-    <div class="lideranca-grid">
-      <div class="lider-card reveal">
-        <div class="lider-avatar">P</div>
-        <h4>Pastor Gilson Elias Schinemann</h4>
-        <span class="role">Presidente ADQB</span>
-      </div>
-      <div class="lider-card reveal">
-        <div class="lider-avatar">V</div>
-        <h4>Pastor Erondi Fagundes Kailer</h4>
-        <span class="role">Vice-presidente</span>
-      </div>
-      <div class="lider-card reveal">
-        <div class="lider-avatar">S</div>
-        <h4>Evangelista Amauri Souza Brandão Junior</h4>
-        <span class="role">Superintendente Administrativo</span>
-      </div>
-      <div class="lider-card reveal">
-        <div class="lider-avatar">T</div>
-        <h4>Pastor Rene Deomar Lemos Silvério</h4>
-        <span class="role">Superintendente de Obras</span>
-      </div>
-      <div class="lider-card reveal">
-        <div class="lider-avatar">T</div>
-        <h4>Evangelista Carlos Souza</h4>
-        <span class="role">Superintendente Financeiro</span>
-      </div>
-      <div class="lider-card reveal">
-        <div class="lider-avatar">T</div>
-        <h4>Evangelista Alon da Cruz Silva</h4>
-        <span class="role">Superintendente do Minitério</span>
-      </div>
-      <div class="lider-card reveal">
-        <div class="lider-avatar">T</div>
-        <h4>Pastor Jose Carlos</h4>
-        <span class="role">Superintendente de Patrimônio</span>
-      </div>
-      </div>
-    </div>
+<div class="carousel-wrap">
+  <button class="carousel-btn carousel-prev" aria-label="Anterior">‹</button>
+
+  <div class="lideranca-carousel" id="liderancaCarousel">
+    <div class="lider-card reveal">
+  <img class="lider-foto" src="images/diretoria-gilson.jpg" alt="Pastor Gilson Elias Schinemann">
+  <h4>Pr. Gilson Elias Schinemann</h4>
+  <span class="role">Presidente ADQB</span>
+</div>
+<div class="lider-card reveal">
+  <img class="lider-foto" src="images/diretoria-erondi.jpg" alt="Pastor Erondi Fagundes Kailer">
+  <h4>Pr. Erondi Fagundes Kailer</h4>
+  <span class="role">Vice-presidente</span>
+</div>
+<div class="lider-card reveal">
+  <img class="lider-foto" src="images/diretoria-amauri.jpg" alt="Evangelista Amauri Souza Brandão Junior">
+  <h4>Ev. Amauri Souza Brandão Junior</h4>
+  <span class="role">Superintendente Administrativo</span>
+</div>
+<div class="lider-card reveal">
+  <img class="lider-foto" src="images/diretoria-rene.jpg" alt="Pastor Rene Deomar Lemos Silvério">
+  <h4>Pr. Rene Deomar Lemos Silvério</h4>
+  <span class="role">Superintendente de Obras</span>
+</div>
+<div class="lider-card reveal">
+  <img class="lider-foto" src="images/diretoria-carlos.jpg" alt="Evangelista Carlos Souza">
+  <h4>Ev. Carlos Souza</h4>
+  <span class="role">Superintendente Financeiro</span>
+</div>
+<div class="lider-card reveal">
+  <img class="lider-foto" src="images/diretoria-alon.jpg" alt="Evangelista Alon da Cruz Silva">
+  <h4>Ev. Alon da Cruz Silva</h4>
+  <span class="role">Superintendente do Minitério</span>
+</div>
+<div class="lider-card reveal">
+  <img class="lider-foto" src="images/diretoria-jose.jpg" alt="Pastor Jose Carlos">
+  <h4>Pr. Jose Carlos</h4>
+  <span class="role">Superintendente de Patrimônio</span>
+</div>
   </div>
-</section>
+
+  <button class="carousel-btn carousel-next" aria-label="Próximo">›</button>
+</div>
 
 <!-- ================= SOBRE ================= -->
 <section class="dark" id="sobre">
@@ -805,6 +848,18 @@
     entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
   }, { threshold:.15 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  const carousel = document.getElementById('liderancaCarousel');
+const prevBtn = document.querySelector('.carousel-prev');
+const nextBtn = document.querySelector('.carousel-next');
+if(carousel && prevBtn && nextBtn){
+  const scrollAmount = () => carousel.querySelector('.lider-card').offsetWidth + 20;
+  prevBtn.addEventListener('click', () => {
+    carousel.scrollBy({ left: -scrollAmount(), behavior: 'smooth' });
+  });
+  nextBtn.addEventListener('click', () => {
+    carousel.scrollBy({ left: scrollAmount(), behavior: 'smooth' });
+  });
+}
 </script>
 </body>
 </html>
