@@ -66,8 +66,12 @@
     box-shadow:0 8px 24px rgba(0,0,0,.25);
   }
   nav.wrap{ display:flex; align-items:center; justify-content:space-between; gap:20px;}
-  .brand{ display:flex; align-items:center; gap:12px; }
-  .brand img{ width:40px; height:40px; object-fit:contain; filter: drop-shadow(0 0 6px rgba(201,165,74,.35)); }
+  .brand{ display:flex; align-items:center; gap:03px; }
+  .brand img{
+  width:56px; height:96px;
+  object-fit:contain;
+  filter: drop-shadow(0 0 8px rgba(201,165,74,.5)) drop-shadow(0 0 3px rgba(0,0,0,.6));
+}
   .brand-text{ display:flex; flex-direction:column; line-height:1.05; }
   .brand-text strong{ font-family:var(--serif); color:var(--marfim); font-size:1.15rem; letter-spacing:.03em; }
   .brand-text span{ font-family:var(--sans); color:var(--dourado); font-size:.62rem; letter-spacing:.18em; text-transform:uppercase; }
@@ -198,6 +202,7 @@
     .tl-item .tl-media{ display:none; }
     .tl-item .tl-text{ order:2; text-align:left !important; }
     .timeline-line{ left:13px; }
+    
   }
   /* ---------- AGENDA timeline ---------- */
   .timeline{ position:relative; }
@@ -233,6 +238,7 @@
     .tl-item .tl-text{ order:2; text-align:left !important; }
     .timeline-line{ left:13px; }
   }
+  
 
   /* ---------- CONGREGAÇÕES ---------- */
   .cong-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:26px; }
@@ -337,6 +343,30 @@
 @media(max-width:600px){
   .carousel-btn{ display:none; }
 }
+
+.cong-carousel{
+  display:flex;
+  gap:20px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  scroll-behavior:smooth;
+  padding:6px 4px 20px;
+  -webkit-overflow-scrolling:touch;
+}
+.cong-carousel::-webkit-scrollbar{ height:6px; }
+.cong-carousel::-webkit-scrollbar-thumb{ background:var(--dourado-suave); border-radius:10px; }
+.cong-carousel::-webkit-scrollbar-track{ background:transparent; }
+
+.cong-carousel .cong-card{
+  flex:0 0 auto;
+  width:280px;
+  scroll-snap-align:start;
+}
+
+@media(max-width:768px){
+  .cong-carousel .cong-card{ width:250px; }
+}
+
 .lider-foto{
   width:90px; height:90px; border-radius:50%;
   margin:0 auto 16px;
@@ -563,69 +593,68 @@
 
 <!-- ================= CONGREGAÇÕES ================= -->
 <section id="congregacoes">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Onde estamos</span>
-      <h2>Nossas congregações</h2>
-      <p>A ADQB reúne a igreja Sede e as Congregações pelos bairros de Quatro Barras. Acesse a aba Agenda para visualizar a agenda do campo e a agenda das congregações para obter informações sobre os horários.</p>
+  <div class="carousel-wrap">
+  <button class="carousel-btn carousel-prev-cong" aria-label="Anterior">‹</button>
+
+  <div class="cong-carousel" id="congCarousel">
+    <div class="cong-card reveal">
+      <span class="tag">Sede</span>
+      <h3>Sede</h3>
+      <p>Endereço: Rua Manoel Alves dos Santos, n° 5 - Jardim Pinheiros</p>
+      <p>Pastor local: Pastor Presidente Gilson Schinemann</p>
     </div>
-    <div class="cong-grid">
-      <div class="cong-card reveal">
-        <span class="tag">Sede</span>
-        <h3>Sede</h3>
-        <p>Endereço: Rua Manoel Alves dos Santos, n° 5 - Jardim Pinheiros</p>
-        <p>Pastor local: Pr. Presidente Gilson Schinemann</p>
-      </div>
-      <div class="cong-card reveal">
-        <span class="tag">Borda do Campo</span>
-        <h3>Borda do Campo</h3>
-        <p>Endereço: R. Ana Andreatta Mocelin, N° 123 - Borda do Campo</p>
-        <p>Pastor local: Pr. Paulo e Ir. Raquel dos Santos</p>
-      </div>
-      <div class="cong-card reveal">
-        <span class="tag">Florestal</span>
-        <h3>Florestal</h3>
-        <p>Endereço: R. Altevir Alves Cordeiro, N° 94 - Florestal</p>
-        <p>Pastor local: Ev. Alon e Ir. Kawany Silva</p>
-      </div>
-      <div class="cong-card reveal">
-        <span class="tag">Jardim Graciosa</span>
-        <h3>Jardim Graciosa</h3>
-        <p>Endereço: R. Aguida Soares de Lima, N° 96 - Jardim Graciosa</p>
-        <p>Pastor local: Pr. Jose e Ir. Roseni Paes</p>
-      </div>
-      <div class="cong-card reveal">
-        <span class="tag">Jardim Industrial</span>
-        <h3>Jardim Industrial</h3>
-        <p>Endereço: R. Euclides Alves Pires, N° 140 - Jardim Industrial</p>
-        <p>Pastor local: Ev. Clodair e Ir. Vanilda Faria</p>
-      </div>
-      <div class="cong-card reveal">
-        <span class="tag">Jardim Menino Deus</span>
-        <h3>Jardim Menino Deus</h3>
-        <p>Endereço: R. das Missões, N° 155 - Jardim Menino Deus</p>
-        <p>Pastor local: Pr. Edson e Ir. Leni Silva</p>
-      </div>
-      <div class="cong-card reveal">
-        <span class="tag">Palmitalzinho</span>
-        <h3>Palmitalzinho</h3>
-        <p>Endereço: R. Osório Alves Pires, N° 1000 - Palmitalzinho</p>
-        <p>Pastor local: Pr. Odair e Ir. Rosilene Miquelino</p>
-      </div>
-      <div class="cong-card reveal">
-        <span class="tag">Jardim Patrícia</span>
-        <h3>Jardim Patrícia</h3>
-        <p>Endereço: Av. 25 de Janeiro, N° 752 - Jardim Patrícia</p>
-        <p>Pastor local: Pr. Erondi e Ir. Ivone Kailer</p>
-      </div>
-      <div class="cong-card reveal">
-        <span class="tag">Pinheirinho</span>
-        <h3>Pinheirinho</h3>
-        <p>Endereço: Av. das Pedreiras, N° 1407 - Pinheirinho</p>
-        <p>Pastor local: Pr. Marcio e Ir. Mirian Córdova</p>
-      </div>
+    <div class="cong-card reveal">
+      <span class="tag">Borda do Campo</span>
+      <h3>Borda do Campo</h3>
+      <p>Endereço: R. Ana Andreatta Mocelin, N° 123 - Borda do Campo</p>
+      <p>Pastor local: Pr. Paulo e Ir. Raquel dos Santos</p>
+    </div>
+    <div class="cong-card reveal">
+      <span class="tag">Florestal</span>
+      <h3>Florestal</h3>
+      <p>Endereço: R. Altevir Alves Cordeiro, N° 94 - Florestal</p>
+      <p>Pastor local: Ev. Alon e Ir. Kawany Silva</p>
+    </div>
+    <div class="cong-card reveal">
+      <span class="tag">Jardim Graciosa</span>
+      <h3>Jardim Graciosa</h3>
+      <p>Endereço: R. Aguida Soares de Lima, N° 96 - Jardim Graciosa</p>
+      <p>Pastor local: Pr. Jose e Ir. Roseni Paes</p>
+    </div>
+    <div class="cong-card reveal">
+      <span class="tag">Jardim Industrial</span>
+      <h3>Jardim Industrial</h3>
+      <p>Endereço: R. Euclides Alves Pires, N° 140 - Jardim Industrial</p>
+      <p>Pastor local: Ev. Clodair e Ir. Vanilda Faria</p>
+    </div>
+    <div class="cong-card reveal">
+      <span class="tag">Jardim Menino Deus</span>
+      <h3>Jardim Menino Deus</h3>
+      <p>Endereço: R. das Missões, N° 155 - Jardim Menino Deus</p>
+      <p>Pastor local: Pr. Edson e Ir. Leni Silva</p>
+    </div>
+    <div class="cong-card reveal">
+      <span class="tag">Palmitalzinho</span>
+      <h3>Palmitalzinho</h3>
+      <p>Endereço: R. Osório Alves Pires, N° 1000 - Palmitalzinho</p>
+      <p>Pastor local: Pr. Odair e Ir. Rosilene Miquelino</p>
+    </div>
+    <div class="cong-card reveal">
+      <span class="tag">Jardim Patrícia</span>
+      <h3>Jardim Patrícia</h3>
+      <p>Endereço: Av. 25 de Janeiro, N° 752 - Jardim Patrícia</p>
+      <p>Pastor local: Pr. Erondi e Ir. Ivone Kailer</p>
+    </div>
+    <div class="cong-card reveal">
+      <span class="tag">Pinheirinho</span>
+      <h3>Pinheirinho</h3>
+      <p>Endereço: Av. das Pedreiras, N° 1407 - Pinheirinho</p>
+      <p>Pastor local: Pr. Marcio e Ir. Mirian Córdova</p>
     </div>
   </div>
+
+  <button class="carousel-btn carousel-next-cong" aria-label="Próximo">›</button>
+</div>
 </section>
 
 <!-- ================= DÍZIMOS E OFERTAS ================= -->
@@ -858,6 +887,18 @@ if(carousel && prevBtn && nextBtn){
   });
   nextBtn.addEventListener('click', () => {
     carousel.scrollBy({ left: scrollAmount(), behavior: 'smooth' });
+  });
+}
+const congCarousel = document.getElementById('congCarousel');
+const congPrevBtn = document.querySelector('.carousel-prev-cong');
+const congNextBtn = document.querySelector('.carousel-next-cong');
+if(congCarousel && congPrevBtn && congNextBtn){
+  const congScrollAmount = () => congCarousel.querySelector('.cong-card').offsetWidth + 20;
+  congPrevBtn.addEventListener('click', () => {
+    congCarousel.scrollBy({ left: -congScrollAmount(), behavior: 'smooth' });
+  });
+  congNextBtn.addEventListener('click', () => {
+    congCarousel.scrollBy({ left: congScrollAmount(), behavior: 'smooth' });
   });
 }
 </script>
