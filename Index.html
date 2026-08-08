@@ -528,7 +528,11 @@
     <!-- <a href="#historia" class="btn btn-gold">Nossa História</a> -->
     <a href="#sobre" class="btn btn-ghost">Sobre nós</a>
     <a href="#dizimos" class="btn btn-ghost">Dízimos e Ofertas</a>
-    <a href="#ao-vivo" class="btn btn-live">
+    <a href="https://www.youtube.com/channel/UCNUiTB5HLrpakeD554pqdkg/live" 
+   class="btn btn-live" 
+   id="btnAoVivo"
+   target="_blank" 
+   rel="noopener">
   <svg viewBox="0 0 24 24" class="yt-icon"><path d="M23 12s0-3.4-.43-5c-.24-.9-.94-1.6-1.84-1.84C19.13 4.72 12 4.72 12 4.72s-7.13 0-8.73.44c-.9.24-1.6.94-1.84 1.84C1 8.6 1 12 1 12s0 3.4.43 5c.24.9.94 1.6 1.84 1.84 1.6.44 8.73.44 8.73.44s7.13 0 8.73-.44c.9-.24 1.6-.94 1.84-1.84.43-1.6.43-5 .43-5zM9.8 15.4V8.6L15.8 12l-6 3.4z"/></svg>
   AO VIVO
 </a>
@@ -776,7 +780,7 @@
 
   <div class="lideranca-carousel" id="liderancaCarousel">
     <div class="lider-card reveal">
-  <img class="lider-foto" src="images/diretoria-gilson.jpg" alt="Pastor Gilson Elias Schinemann">
+  <img class="lider-foto" src="images/diretoria-gilson.png" alt="Pastor Gilson Elias Schinemann">
   <h4>Pr. Gilson Elias Schinemann</h4>
   <span class="role">Presidente ADQB</span>
 </div>
@@ -960,6 +964,27 @@ if(congCarousel && congPrevBtn && congNextBtn){
   });
   congNextBtn.addEventListener('click', () => {
     congCarousel.scrollBy({ left: congScrollAmount(), behavior: 'smooth' });
+  });
+}
+
+// ---- Botão AO VIVO: abre app do YouTube quando possível ----
+const btnAoVivo = document.getElementById('btnAoVivo');
+if (btnAoVivo) {
+  btnAoVivo.addEventListener('click', function(e) {
+    const channelId = 'UCNUiTB5HLrpakeD554pqdkg';
+    const isMobile = /Android|iPhone|iPad/i.test(navigator.userAgent);
+
+    if (isMobile) {
+      e.preventDefault();
+      const webUrl = `https://www.youtube.com/channel/${channelId}/live`;
+      const appUrl = `vnd.youtube://channel/${channelId}`;
+
+      window.location.href = appUrl;
+      setTimeout(function () {
+        window.location.href = webUrl;
+      }, 800);
+    }
+    // Desktop: segue o href normal (abre no navegador/YouTube)
   });
 }
 </script>
