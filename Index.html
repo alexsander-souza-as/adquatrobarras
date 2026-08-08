@@ -246,6 +246,26 @@
     background:var(--marfim); border:1px solid rgba(13,40,24,.12); padding:34px 30px;
     position:relative; overflow:hidden;
   }
+  .cong-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+  margin-top:16px;
+  padding:11px 16px;
+  background: var(--dourado);
+  color: var(--preto);
+  font-size:.72rem;
+  font-weight:700;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  border-radius:2px;
+  transition: background .3s ease, transform .2s ease;
+}
+.cong-btn:hover{
+  background: var(--dourado-claro);
+  transform: translateY(-2px);
+}
   .cong-card::before{
     content:''; position:absolute; top:0; left:0; width:4px; height:100%; background:var(--dourado);
   }
@@ -598,59 +618,67 @@
 
   <div class="cong-carousel" id="congCarousel">
     <div class="cong-card reveal">
-      <span class="tag">Sede</span>
-      <h3>Sede</h3>
-      <p>Endereço: Rua Manoel Alves dos Santos, n° 5 - Jardim Pinheiros</p>
-      <p>Pastor local: Pastor Presidente Gilson Schinemann</p>
-    </div>
-    <div class="cong-card reveal">
-      <span class="tag">Borda do Campo</span>
-      <h3>Borda do Campo</h3>
-      <p>Endereço: R. Ana Andreatta Mocelin, N° 123 - Borda do Campo</p>
-      <p>Pastor local: Pr. Paulo e Ir. Raquel dos Santos</p>
-    </div>
-    <div class="cong-card reveal">
-      <span class="tag">Florestal</span>
-      <h3>Florestal</h3>
-      <p>Endereço: R. Altevir Alves Cordeiro, N° 94 - Florestal</p>
-      <p>Pastor local: Ev. Alon e Ir. Kawany Silva</p>
-    </div>
-    <div class="cong-card reveal">
-      <span class="tag">Jardim Graciosa</span>
-      <h3>Jardim Graciosa</h3>
-      <p>Endereço: R. Aguida Soares de Lima, N° 96 - Jardim Graciosa</p>
-      <p>Pastor local: Pr. Jose e Ir. Roseni Paes</p>
-    </div>
-    <div class="cong-card reveal">
-      <span class="tag">Jardim Industrial</span>
-      <h3>Jardim Industrial</h3>
-      <p>Endereço: R. Euclides Alves Pires, N° 140 - Jardim Industrial</p>
-      <p>Pastor local: Ev. Clodair e Ir. Vanilda Faria</p>
-    </div>
-    <div class="cong-card reveal">
-      <span class="tag">Jardim Menino Deus</span>
-      <h3>Jardim Menino Deus</h3>
-      <p>Endereço: R. das Missões, N° 155 - Jardim Menino Deus</p>
-      <p>Pastor local: Pr. Edson e Ir. Leni Silva</p>
-    </div>
-    <div class="cong-card reveal">
-      <span class="tag">Palmitalzinho</span>
-      <h3>Palmitalzinho</h3>
-      <p>Endereço: R. Osório Alves Pires, N° 1000 - Palmitalzinho</p>
-      <p>Pastor local: Pr. Odair e Ir. Rosilene Miquelino</p>
-    </div>
-    <div class="cong-card reveal">
-      <span class="tag">Jardim Patrícia</span>
-      <h3>Jardim Patrícia</h3>
-      <p>Endereço: Av. 25 de Janeiro, N° 752 - Jardim Patrícia</p>
-      <p>Pastor local: Pr. Erondi e Ir. Ivone Kailer</p>
-    </div>
-    <div class="cong-card reveal">
-      <span class="tag">Pinheirinho</span>
-      <h3>Pinheirinho</h3>
-      <p>Endereço: Av. das Pedreiras, N° 1407 - Pinheirinho</p>
-      <p>Pastor local: Pr. Marcio e Ir. Mirian Córdova</p>
-    </div>
+  <span class="tag">ADQB</span>
+  <h3>Sede</h3>
+  <p>Pastor local: Pastor Presidente <p>Pr. Gilson Schinemann &</p> <p>Ir. Rose Schinemann</p>
+  <a class="cong-btn" href="https://agenda-sede.netlify.app/" target="_blank" rel="noopener">Abrir Agenda</a>
+</div>
+
+<div class="cong-card reveal">
+  <span class="tag">ADQB</span>
+  <h3>Borda do Campo</h3>
+  <p>Pastor local: <p>Pr. Paulo dos Santos &</p> <p>Ir. Raquel dos Santos</p>
+  <a class="cong-btn" href="https://borda-do-campo.netlify.app/" target="_blank" rel="noopener">Abrir Agenda</a>
+</div>
+
+<div class="cong-card reveal">
+  <span class="tag">ADQB</span>
+  <h3>Florestal</h3>
+  <p>Pastor local: <p>Ev. Alon Silva &</p> <p>Ir. Kawany Silva</p>
+  <a class="cong-btn" href="https://florestal.netlify.app/" target="_blank" rel="noopener">Abrir Agenda</a>
+</div>
+
+<div class="cong-card reveal">
+  <span class="tag">ADQB</span>
+  <h3>Jardim Graciosa</h3>
+  <p>Pastor local: <p>Pr. Jose Paes &</p> <p>Ir. Roseni Paes</p>
+  <a class="cong-btn" href="https://jdgraciosa.netlify.app/" target="_blank" rel="noopener">Abrir Agenda</a>
+</div>
+
+<div class="cong-card reveal">
+  <span class="tag">ADQB</span>
+  <h3>Jardim Industrial</h3>
+  <p>Pastor local: <p>Ev. Clodair Faria &</p> <p>Ir. Vanilda Faria</p>
+  <a class="cong-btn" href="https://jd-industrial.netlify.app/" target="_blank" rel="noopener">Abrir Agenda</a>
+</div>
+
+<div class="cong-card reveal">
+  <span class="tag">ADQB</span>
+  <h3>Jardim Menino Deus</h3>
+  <p>Pastor local: <p>Pr. Edson Silva &</p> <p>Ir. Leni Silva</p>
+  <a class="cong-btn" href="https://jd-menino-deus.netlify.app/" target="_blank" rel="noopener">Abrir Agenda</a>
+</div>
+
+<div class="cong-card reveal">
+  <span class="tag">ADQB</span>
+  <h3>Palmitalzinho</h3>
+  <p>Pastor local: <p>Pr. Odair Miquelino &</p> <p>Ir. Rosilene Miquelino</p>
+  <a class="cong-btn" href="https://palmitalzinho.netlify.app/" target="_blank" rel="noopener">Abrir Agenda</a>
+</div>
+
+<div class="cong-card reveal">
+  <span class="tag">ADQB</span>
+  <h3>Jardim Patrícia</h3>
+  <p>Pastor local: <p>Pr. Erondi Kailer &</p> <p>Ir. Ivone Kailer</p>
+  <a class="cong-btn" href="https://jdpatricia.netlify.app/" target="_blank" rel="noopener">Abrir Agenda</a>
+</div>
+
+<div class="cong-card reveal">
+  <span class="tag">ADQB</span>
+  <h3>Pinheirinho</h3>
+  <p>Pastor local: <p>Pr. Marcio Córdova &</p> <p>Ir. Mirian Córdova</p>
+  <a class="cong-btn" href="https://pinheirinho.netlify.app/" target="_blank" rel="noopener">Abrir Agenda</a>
+</div>
   </div>
 
   <button class="carousel-btn carousel-next-cong" aria-label="Próximo">›</button>
