@@ -117,6 +117,23 @@
   .btn-ghost{ border:1px solid rgba(246,241,228,.45); color:var(--marfim); }
   .btn-ghost:hover{ border-color:var(--dourado); color:var(--dourado); }
 
+  .btn-live{
+  background: #b8283a;
+  color: var(--marfim);
+  border:1px solid #b8283a;
+}
+.btn-live:hover{
+  background: #d13146;
+  transform: translateY(-2px);
+}
+.yt-icon{
+  width:18px;
+  height:18px;
+  fill: currentColor;
+  flex-shrink:0;
+}
+
+
   .scroll-cue{
     position:absolute; bottom:18px; left:50%; transform:translateX(-50%); z-index:2;
     width:1px; height:46px; background:linear-gradient(180deg, transparent, var(--dourado));
@@ -436,6 +453,9 @@
     .midia-grid{ grid-template-columns:repeat(2,1fr); }
     .midia-grid .g1{ grid-column:span 2; grid-row:span 1; }
   }
+  .midia-grid .video-embed + .video-embed{
+  margin-top:22px;
+}
 
   /* ---------- FOOTER ---------- */
   footer{ background:var(--preto); color:var(--marfim); padding:70px 0 30px; }
@@ -502,13 +522,19 @@
 
 
 <section class="hero" id="inicio">
+  <div class="hero-live" id="ao-vivo"></div>
   <div class="hero-cta-row">
-    <div class="wrap">
-      <a href="#historia" class="btn btn-gold">Nossa História</a>
-      <a href="#sobre" class="btn btn-ghost">Sobre nós</a>
-      <a href="#dizimos" class="btn btn-ghost">Dízimos e Ofertas</a>
-    </div>
+  <div class="wrap">
+    <!-- <a href="#historia" class="btn btn-gold">Nossa História</a> -->
+    <a href="#sobre" class="btn btn-ghost">Sobre nós</a>
+    <a href="#dizimos" class="btn btn-ghost">Dízimos e Ofertas</a>
+    <a href="#ao-vivo" class="btn btn-live">
+  <svg viewBox="0 0 24 24" class="yt-icon"><path d="M23 12s0-3.4-.43-5c-.24-.9-.94-1.6-1.84-1.84C19.13 4.72 12 4.72 12 4.72s-7.13 0-8.73.44c-.9.24-1.6.94-1.84 1.84C1 8.6 1 12 1 12s0 3.4.43 5c.24.9.94 1.6 1.84 1.84 1.6.44 8.73.44 8.73.44s7.13 0 8.73-.44c.9-.24 1.6-.94 1.84-1.84.43-1.6.43-5 .43-5zM9.8 15.4V8.6L15.8 12l-6 3.4z"/></svg>
+  AO VIVO
+</a>
   </div>
+</div>
+  
   <div class="scroll-cue"></div>
 </section>
 
@@ -618,6 +644,12 @@
   <button class="carousel-btn carousel-prev-cong" aria-label="Anterior">‹</button>
 
   <div class="cong-carousel" id="congCarousel">
+    <div class="cong-card reveal">
+  <span class="tag">Agenda Geral</span>
+  <h3>Agenda do Campo</h3>
+  <p>Agenda com todos os eventos</p> <p>Congressos e datas especiais da ADQB ao longo do ano.</p>
+  <a class="cong-btn" href="https://agenda-do-campo.netlify.app/" target="_blank" rel="noopener">Abrir Agenda</a>
+</div>
     <div class="cong-card reveal">
   <span class="tag">ADQB</span>
   <h3>Sede</h3>
