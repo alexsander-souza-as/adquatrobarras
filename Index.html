@@ -67,12 +67,12 @@
     box-shadow:0 8px 24px rgba(0,0,0,.25);
   }
   nav.wrap{ display:flex; align-items:center; justify-content:space-between; gap:20px;}
-  .brand{ display:flex; align-items:center; gap:03px; }
+  .brand{ display:flex; align-items:center; gap:3px; }
   .brand img{
-  width:56px; height:96px;
-  object-fit:contain;
-  filter: drop-shadow(0 0 8px rgba(201,165,74,.5)) drop-shadow(0 0 3px rgba(0,0,0,.6));
-}
+    width:56px; height:96px;
+    object-fit:contain;
+    filter: drop-shadow(0 0 8px rgba(201,165,74,.5)) drop-shadow(0 0 3px rgba(0,0,0,.6));
+  }
   .brand-text{ display:flex; flex-direction:column; line-height:1.05; }
   .brand-text strong{ font-family:var(--serif); color:var(--marfim); font-size:1.15rem; letter-spacing:.03em; }
   .brand-text span{ font-family:var(--sans); color:var(--dourado); font-size:.62rem; letter-spacing:.18em; text-transform:uppercase; }
@@ -103,7 +103,7 @@
   /* ---------- HERO ---------- */
   .hero{
     position:relative; min-height:100vh; display:flex; flex-direction:column; justify-content:flex-end;
-    background: linear-gradient(180deg, rgba(7,19,16,.35) 0%, rgba(7,19,16,.35) 45%, rgba(7,19,16,.96) 100%), var(--verde-profundo) url('images/mobile\ adqb.png') center 30%/cover no-repeat;
+    background: linear-gradient(180deg, rgba(7,19,16,.35) 0%, rgba(7,19,16,.35) 45%, rgba(7,19,16,.96) 100%), var(--verde-profundo) url('images/mobile adqb.png') center 30%/cover no-repeat;
   }
   .hero-cta-row{
     position:relative; z-index:2; padding: 0 0 46px;
@@ -119,21 +119,20 @@
   .btn-ghost:hover{ border-color:var(--dourado); color:var(--dourado); }
 
   .btn-live{
-  background: #b8283a;
-  color: var(--marfim);
-  border:1px solid #b8283a;
-}
-.btn-live:hover{
-  background: #d13146;
-  transform: translateY(-2px);
-}
-.yt-icon{
-  width:18px;
-  height:18px;
-  fill: currentColor;
-  flex-shrink:0;
-}
-
+    background: #b8283a;
+    color: var(--marfim);
+    border:1px solid #b8283a;
+  }
+  .btn-live:hover{
+    background: #d13146;
+    transform: translateY(-2px);
+  }
+  .yt-icon{
+    width:18px;
+    height:18px;
+    fill: currentColor;
+    flex-shrink:0;
+  }
 
   .scroll-cue{
     position:absolute; bottom:18px; left:50%; transform:translateX(-50%); z-index:2;
@@ -155,25 +154,25 @@
   .ticker span.sep{ color: var(--verde-suave); }
   @keyframes scroll-left{ from{transform:translateX(0);} to{transform:translateX(-50%);} }
 
-   /* --------- SOCIAIS ---------- */
+  /* --------- SOCIAIS ---------- */
   .social-bar{
-  background: var(--verde-profundo); color:var(--marfim); padding:70px 0 30px;
-  padding: 18px 0;
-  border-bottom: 1px solid rgba(201,165,74,.15);
-}
-.socials-center{
-  display:flex;
-  justify-content:center;
-  gap:16px;
-  margin:0 auto;
-}
-.socials-center a{
-  width:44px; height:44px; border:1px solid rgba(246,241,228,.25); border-radius:50%;
-  display:flex; align-items:center; justify-content:center; transition:.3s;
-}
-.socials-center a:hover{ border-color:var(--dourado); background:var(--dourado); color:var(--preto); }
-.socials-center svg{ width:18px; height:18px; fill:currentColor; }
-
+    background: var(--verde-profundo); color:var(--marfim);
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(201,165,74,.15);
+  }
+  .socials-center{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:16px;
+    margin:0 auto;
+  }
+  .socials-center a{
+    width:44px; height:44px; border:1px solid rgba(246,241,228,.25); border-radius:50%;
+    display:flex; align-items:center; justify-content:center; transition:.3s;
+  }
+  .socials-center a:hover{ border-color:var(--dourado); background:var(--dourado); color:var(--preto); }
+  .socials-center svg{ width:18px; height:18px; fill:currentColor; }
 
   /* ---------- SECTION shells ---------- */
   section{ padding:110px 0; position:relative; }
@@ -187,8 +186,8 @@
   .reveal{ opacity:0; transform:translateY(28px); transition: opacity .8s ease, transform .8s ease; }
   .reveal.in{ opacity:1; transform:translateY(0); }
 
-  /* ---------- HISTÓRIA timeline ---------- */ 
-  .timeline{ position:relative; }
+  /* ---------- HISTÓRIA timeline ---------- */
+  .timeline{ position:relative; margin-top:56px; }
   .timeline-line{
     position:absolute; left:50%; top:0; bottom:0; width:2px; transform:translateX(-50%);
     background: linear-gradient(180deg, transparent, var(--dourado) 8%, var(--dourado) 92%, transparent);
@@ -196,42 +195,6 @@
   }
   .tl-item{ display:grid; grid-template-columns:1fr 60px 1fr; gap:0 36px; align-items:center; margin-bottom:64px; }
   .tl-item:last-child{ margin-bottom:0; }
-  .tl-media, .tl-text{ }
-  .tl-dot{
-    width:14px; height:14px; border-radius:50%; background:var(--verde-profundo); border:2px solid var(--dourado);
-    justify-self:center; position:relative; z-index:2;
-  }
-  .tl-item .tl-text .eyebrow{ display:block; margin-bottom:8px; }
-  .tl-item .tl-text h3{ font-size:1.7rem; color:var(--marfim); margin-bottom:10px; }
-  .tl-item .tl-text p{ color:var(--texto-claro); font-size:.98rem; }
-  .tl-photo{
-    border:1px solid var(--dourado-suave); padding:10px; background:rgba(0,0,0,.15);
-  }
-  .tl-photo img{ width:100%; height:auto; filter: sepia(.08); }
-  .tl-photo figcaption{ font-size:.7rem; color:var(--dourado-claro); letter-spacing:.05em; margin-top:8px; text-align:center; opacity:.8; }
-  .tl-item.reverse .tl-media{ order:3; }
-  .tl-item.reverse .tl-text{ order:1; text-align:right; }
-  .tl-item.reverse .tl-text .eyebrow::before{ content:''; }
-  .tl-item.reverse .tl-text .eyebrow::after{ content:' ✦'; }
-
-  @media(max-width:760px){
-    .tl-item, .tl-item.reverse{ grid-template-columns:26px 1fr; }
-    .tl-item .tl-dot, .tl-item.reverse .tl-dot{ order:1; }
-    .tl-item .tl-media{ display:none; }
-    .tl-item .tl-text{ order:2; text-align:left !important; }
-    .timeline-line{ left:13px; }
-    
-  }
-  /* ---------- AGENDA timeline ---------- */
-  /*.timeline{ position:relative; }
-  .timeline-line{
-    position:absolute; left:50%; top:0; bottom:0; width:2px; transform:translateX(-50%);
-    background: linear-gradient(180deg, transparent, var(--dourado) 8%, var(--dourado) 92%, transparent);
-    opacity:.55;
-  }
-  .tl-item{ display:grid; grid-template-columns:1fr 60px 1fr; gap:0 36px; align-items:center; margin-bottom:64px; }
-  .tl-item:last-child{ margin-bottom:0; }
-  .tl-media, .tl-text{ }
   .tl-dot{
     width:14px; height:14px; border-radius:50%; background:var(--verde-profundo); border:2px solid var(--dourado);
     justify-self:center; position:relative; z-index:2;
@@ -256,45 +219,38 @@
     .tl-item .tl-text{ order:2; text-align:left !important; }
     .timeline-line{ left:13px; }
   }
-    */
-  
 
   /* ---------- CONGREGAÇÕES ---------- */
-  .cong-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:26px; }
   .cong-card{
     background:var(--marfim); border:1px solid rgba(13,40,24,.12); padding:34px 30px;
     position:relative; overflow:hidden;
   }
   .cong-btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  width:100%;
-  margin-top:16px;
-  padding:11px 16px;
-  background: var(--dourado);
-  color: var(--preto);
-  font-size:.72rem;
-  font-weight:700;
-  letter-spacing:.1em;
-  text-transform:uppercase;
-  border-radius:2px;
-  transition: background .3s ease, transform .2s ease;
-}
-.cong-btn:hover{
-  background: var(--dourado-claro);
-  transform: translateY(-2px);
-}
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:100%;
+    margin-top:16px;
+    padding:11px 16px;
+    background: var(--dourado);
+    color: var(--preto);
+    font-size:.72rem;
+    font-weight:700;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    border-radius:2px;
+    transition: background .3s ease, transform .2s ease;
+  }
+  .cong-btn:hover{
+    background: var(--dourado-claro);
+    transform: translateY(-2px);
+  }
   .cong-card::before{
     content:''; position:absolute; top:0; left:0; width:4px; height:100%; background:var(--dourado);
   }
   .cong-card .tag{ font-size:.68rem; letter-spacing:.15em; text-transform:uppercase; color:var(--dourado); font-weight:700;}
   .cong-card h3{ margin:10px 0 12px; font-size:1.4rem; }
-  .cong-card p{ font-size:.92rem; opacity:.8; margin-bottom:6px; }
-  .cong-card .edit-note{
-    display:inline-block; margin-top:14px; font-size:.7rem; background:rgba(201,165,74,.15);
-    color:#8a6d1f; padding:4px 10px; border-radius:20px; font-weight:600; letter-spacing:.03em;
-  }
+  .cong-card p{ font-size:.92rem; opacity:.8; margin-bottom:4px; }
 
   /* ---------- DÍZIMOS ---------- */
   .dizimos{ display:grid; grid-template-columns:1.1fr .9fr; gap:60px; align-items:start; }
@@ -312,181 +268,133 @@
   .pix-row span:first-child{ opacity:.6; }
   .pix-row span:last-child{ font-weight:600; }
   .qr-box{
-  margin-top:22px;
-  border:1px solid rgba(13,40,24,.15);
-  background:#fff;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:16px;
-  border-radius:4px;
-}
-.qr-box img{
-  width:100%;
-  max-width:220px;
-  height:auto;
-  display:block;
-}
+    margin-top:22px;
+    border:1px solid rgba(13,40,24,.15);
+    background:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:16px;
+    border-radius:4px;
+  }
+  .qr-box img{
+    width:100%;
+    max-width:220px;
+    height:auto;
+    display:block;
+    margin:0 auto;
+  }
 
-  /* ---------- MISSÕES ---------- */
-  .missoes-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:24px; margin-top:10px;}
-  .miss-card{ text-align:center; padding:30px 18px; }
-  .miss-card .num{ font-family:var(--serif); font-size:2.4rem; color:var(--dourado); display:block; margin-bottom:8px;}
-  .miss-card h4{ font-size:1.05rem; margin-bottom:8px; color:var(--marfim); }
-  .miss-card p{ font-size:.88rem; color:var(--texto-claro); }
-
-  /* ---------- ADQB / Liderança ---------- */
+  /* ---------- CARROSSÉIS (compartilhado) ---------- */
   .carousel-wrap{
-  position:relative;
-  display:flex;
-  align-items:center;
-  gap:12px;
-}
-.lideranca-carousel{
-  display:flex;
-  gap:20px;
-  overflow-x:auto;
-  scroll-snap-type:x mandatory;
-  scroll-behavior:smooth;
-  padding:6px 4px 20px;
-  -webkit-overflow-scrolling:touch;
-}
-.lideranca-carousel::-webkit-scrollbar{ height:6px; }
-.lideranca-carousel::-webkit-scrollbar-thumb{ background:var(--dourado-suave); border-radius:10px; }
-.lideranca-carousel::-webkit-scrollbar-track{ background:transparent; }
+    position:relative;
+    display:flex;
+    align-items:center;
+    gap:12px;
+  }
+  .carousel-btn{
+    flex:0 0 auto;
+    width:42px; height:42px;
+    border-radius:50%;
+    border:1px solid rgba(13,40,24,.2);
+    background:var(--marfim);
+    color:var(--verde-profundo);
+    font-size:1.4rem;
+    line-height:1;
+    cursor:pointer;
+    transition:.3s;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .carousel-btn:hover{ background:var(--dourado); border-color:var(--dourado); color:var(--preto); }
+  @media(max-width:600px){
+    .carousel-btn{ display:none; }
+  }
 
-.lideranca-carousel .lider-card{
-  background:var(--marfim); padding:32px 22px 28px; text-align:center; border:1px solid rgba(13,40,24,.1);
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-}
+  .cong-carousel,
+  .lideranca-carousel,
+  .miss-media-carousel{
+    display:flex;
+    gap:20px;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    scroll-behavior:smooth;
+    padding:6px 4px 20px;
+    -webkit-overflow-scrolling:touch;
+    flex:1;
+    min-width:0;
+  }
+  .cong-carousel::-webkit-scrollbar,
+  .lideranca-carousel::-webkit-scrollbar,
+  .miss-media-carousel::-webkit-scrollbar{ height:6px; }
+  .cong-carousel::-webkit-scrollbar-thumb,
+  .lideranca-carousel::-webkit-scrollbar-thumb,
+  .miss-media-carousel::-webkit-scrollbar-thumb{ background:var(--dourado-suave); border-radius:10px; }
+  .cong-carousel::-webkit-scrollbar-track,
+  .lideranca-carousel::-webkit-scrollbar-track,
+  .miss-media-carousel::-webkit-scrollbar-track{ background:transparent; }
 
-.carousel-btn{
-  flex:0 0 auto;
-  width:42px; height:42px;
-  border-radius:50%;
-  border:1px solid rgba(13,40,24,.2);
-  background:var(--marfim);
-  color:var(--verde-profundo);
-  font-size:1.4rem;
-  line-height:1;
-  cursor:pointer;
-  transition:.3s;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-.carousel-btn:hover{ background:var(--dourado); border-color:var(--dourado); color:var(--preto); }
+  .cong-carousel .cong-card{
+    flex:0 0 auto;
+    width:280px;
+    scroll-snap-align:start;
+  }
+  @media(max-width:768px){
+    .cong-carousel .cong-card{ width:250px; }
+  }
 
-@media(max-width:600px){
-  .carousel-btn{ display:none; }
-}
+  .lideranca-carousel .lider-card{
+    background:var(--marfim); padding:32px 22px 28px; text-align:center; border:1px solid rgba(13,40,24,.1);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    flex:0 0 auto;
+    width:220px;
+    scroll-snap-align:start;
+  }
+  @media(max-width:768px){
+    .lideranca-carousel .lider-card{ width:190px; padding:26px 16px 22px; }
+  }
 
-.cong-carousel{
-  display:flex;
-  gap:20px;
-  overflow-x:auto;
-  scroll-snap-type:x mandatory;
-  scroll-behavior:smooth;
-  padding:6px 4px 20px;
-  -webkit-overflow-scrolling:touch;
-}
-.cong-carousel::-webkit-scrollbar{ height:6px; }
-.cong-carousel::-webkit-scrollbar-thumb{ background:var(--dourado-suave); border-radius:10px; }
-.cong-carousel::-webkit-scrollbar-track{ background:transparent; }
+  .lider-foto{
+    width:90px; height:90px; border-radius:50%;
+    margin:0 auto 16px;
+    object-fit:cover;
+    border:2px solid var(--dourado-suave);
+    display:block;
+    overflow:hidden;
+    background:var(--verde-profundo);
+  }
+  .lider-card h4{ font-size:1.02rem; margin-bottom:6px; }
+  .lider-card .role{ font-size:.85rem; color:var(--dourado); }
 
-.cong-carousel .cong-card{
-  flex:0 0 auto;
-  width:280px;
-  scroll-snap-align:start;
-}
-
-@media(max-width:768px){
-  .cong-carousel .cong-card{ width:250px; }
-}
-
-.miss-media-carousel{
-  display:flex;
-  gap:20px;
-  overflow-x:auto;
-  scroll-snap-type:x mandatory;
-  scroll-behavior:smooth;
-  padding:6px 4px 20px;
-  -webkit-overflow-scrolling:touch;
-}
-.miss-media-carousel::-webkit-scrollbar{ height:6px; }
-.miss-media-carousel::-webkit-scrollbar-thumb{ background:var(--dourado-suave); border-radius:10px; }
-.miss-media-carousel::-webkit-scrollbar-track{ background:transparent; }
-
-.miss-media-card{
-  flex:0 0 auto;
-  width:280px;
-  scroll-snap-align:start;
-  background: rgba(0,0,0,.15);
-  border:1px solid var(--dourado-suave);
-  border-radius:6px;
-  overflow:hidden;
-}
-.miss-media-card img{
-  width:100%;
-  height:180px;
-  object-fit:cover;
-  display:block;
-}
-
-.miss-media-card video{
-  width:100%;
-  height:180px;
-  object-fit:cover;
-  display:block;
-}
-.miss-media-card .video-embed{
-  border-radius:0;
-}
-.miss-media-card p{
-  padding:12px 14px;
-  font-size:.85rem;
-  color: var(--texto-claro);
-}
-
-@media(max-width:768px){
-  .miss-media-card{ width:240px; }
-  .miss-media-card img{ height:150px; }
-}
-
-.miss-carousel{
-  display:flex;
-  gap:20px;
-  overflow-x:auto;
-  scroll-snap-type:x mandatory;
-  scroll-behavior:smooth;
-  padding:6px 4px 20px;
-  -webkit-overflow-scrolling:touch;
-}
-.miss-carousel::-webkit-scrollbar{ height:6px; }
-.miss-carousel::-webkit-scrollbar-thumb{ background:var(--dourado-suave); border-radius:10px; }
-.miss-carousel::-webkit-scrollbar-track{ background:transparent; }
-
-.miss-carousel .miss-card{
-  flex:0 0 auto;
-  width:230px;
-  scroll-snap-align:start;
-}
-
-@media(max-width:768px){
-  .miss-carousel .miss-card{ width:210px; }
-}
-
-.lider-foto{
-  width:90px; height:90px; border-radius:50%;
-  margin:0 auto 16px;
-  object-fit:cover;
-  border:2px solid var(--dourado-suave);
-  display:block;
-  overflow:hidden;
-  background:var(--verde-profundo);
-}
+  .miss-media-card{
+    flex:0 0 auto;
+    width:280px;
+    scroll-snap-align:start;
+    background: rgba(0,0,0,.15);
+    border:1px solid var(--dourado-suave);
+    border-radius:6px;
+    overflow:hidden;
+  }
+  .miss-media-card img,
+  .miss-media-card video{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    display:block;
+  }
+  .miss-media-card p{
+    padding:12px 14px;
+    font-size:.85rem;
+    color: var(--texto-claro);
+  }
+  @media(max-width:768px){
+    .miss-media-card{ width:240px; }
+    .miss-media-card img,
+    .miss-media-card video{ height:150px; }
+  }
 
   /* ---------- SOBRE ---------- */
   .sobre-layout{ display:grid; grid-template-columns:.9fr 1.1fr; gap:60px; align-items:center; }
@@ -495,17 +403,6 @@
   .valor{ padding:18px 0; border-top:1px solid rgba(246,241,228,.15); }
   .valor h3{ color:var(--dourado); font-size:.95rem; letter-spacing:.03em; margin-bottom:6px; }
   .valor p{ font-size:.85rem; opacity:.75; }
-  .horarios{ margin-top:30px; }
-  .horarios .h-row{ display:flex; justify-content:space-between; padding:10px 0; border-top:1px solid rgba(246,241,228,.15); font-size:.92rem;}
-
-  /* ---------- AGENDA ---------- */
-  .agenda-frame{
-  width:100%;
-  overflow:hidden;
-}
-@media(max-width:600px){
-  .agenda-frame iframe{ height:600px; }
-}
 
   /* ---------- MÍDIA ---------- */
   .midia-grid{ display:grid; grid-template-columns:repeat(4,1fr); grid-auto-rows:160px; gap:14px; }
@@ -515,20 +412,18 @@
   .midia-grid .g1{ grid-column:span 2; grid-row:span 2; }
   .midia-grid .g2{ grid-column:span 2; }
   .video-embed{
-    grid-column:span 2; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:10px;
-    color:var(--dourado-claro); border:1px dashed var(--dourado-suave);
-  }
-  .video-embed span{ font-size:.72rem; letter-spacing:.1em; text-transform:uppercase; opacity:.7; }
-  .play-ico{
-    width:44px; height:44px; border-radius:50%; border:1.5px solid var(--dourado); display:flex; align-items:center; justify-content:center;
+    grid-column:span 2;
+    background:none;
   }
   @media(max-width:760px){
-    .midia-grid{ grid-template-columns:repeat(2,1fr); }
+    .midia-grid{ grid-template-columns:repeat(2,1fr); grid-auto-rows:140px; }
     .midia-grid .g1{ grid-column:span 2; grid-row:span 1; }
+    .video-embed{ grid-column:span 2; }
   }
-  .midia-grid .video-embed + .video-embed{
-  margin-top:22px;
-}
+  @media(max-width:420px){
+    .midia-grid{ grid-template-columns:1fr; }
+    .midia-grid .g1, .midia-grid .g2, .video-embed{ grid-column:span 1; }
+  }
 
   /* ---------- FOOTER ---------- */
   footer{ background:var(--preto); color:var(--marfim); padding:70px 0 30px; }
@@ -539,13 +434,6 @@
   footer h5{ font-size:.72rem; letter-spacing:.15em; text-transform:uppercase; color:var(--dourado); margin-bottom:18px; }
   footer ul li{ margin-bottom:10px; font-size:.88rem; opacity:.8; }
   footer ul li a:hover{ color:var(--dourado); }
-  .socials{ display:flex; gap:12px; margin-top:18px; }
-  .socials a{
-    width:38px; height:38px; border:1px solid rgba(246,241,228,.25); border-radius:50%;
-    display:flex; align-items:center; justify-content:center; transition:.3s;
-  }
-  .socials a:hover{ border-color:var(--dourado); background:var(--dourado); color:var(--preto); }
-  .socials svg{ width:16px; height:16px; fill:currentColor; }
   .footer-bottom{
     border-top:1px solid rgba(246,241,228,.12); padding-top:24px; display:flex; justify-content:space-between;
     flex-wrap:wrap; gap:10px; font-size:.78rem; opacity:.55;
@@ -568,6 +456,7 @@
   @media(max-width:600px){
     section{ padding:70px 0; }
     .footer-top{ grid-template-columns:1fr; }
+    .wrap{ padding:0 20px; }
   }
 </style>
 </head>
@@ -581,7 +470,6 @@
     </a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#historia">Nossa História</a></li>
-      <!-- <li><a href="https://agendaadqb.netlify.app/" target="_blank" rel="noopener">Agenda</a></li> -->
       <li><a href="#congregacoes">Congregações</a></li>
       <li><a href="#missoes">Missões</a></li>
       <li><a href="#Diretoria">Diretoria</a></li>
@@ -593,25 +481,21 @@
   </nav>
 </header>
 
-
 <section class="hero" id="inicio">
-  <div class="hero-live" id="ao-vivo"></div>
   <div class="hero-cta-row">
-  <div class="wrap">
-    <!-- <a href="#historia" class="btn btn-gold">Nossa História</a> -->
-    <a href="#sobre" class="btn btn-ghost">Sobre nós</a>
-    <a href="#dizimos" class="btn btn-ghost">Dízimos e Ofertas</a>
-    <a href="https://www.youtube.com/channel/UCNUiTB5HLrpakeD554pqdkg/live" 
-   class="btn btn-live" 
-   id="btnAoVivo"
-   target="_blank" 
-   rel="noopener">
-  <svg viewBox="0 0 24 24" class="yt-icon"><path d="M23 12s0-3.4-.43-5c-.24-.9-.94-1.6-1.84-1.84C19.13 4.72 12 4.72 12 4.72s-7.13 0-8.73.44c-.9.24-1.6.94-1.84 1.84C1 8.6 1 12 1 12s0 3.4.43 5c.24.9.94 1.6 1.84 1.84 1.6.44 8.73.44 8.73.44s7.13 0 8.73-.44c.9-.24 1.6-.94 1.84-1.84.43-1.6.43-5 .43-5zM9.8 15.4V8.6L15.8 12l-6 3.4z"/></svg>
-  AO VIVO
-</a>
+    <div class="wrap">
+      <a href="#sobre" class="btn btn-ghost">Sobre nós</a>
+      <a href="#dizimos" class="btn btn-ghost">Dízimos e Ofertas</a>
+      <a href="https://www.youtube.com/channel/UCNUiTB5HLrpakeD554pqdkg/live"
+         class="btn btn-live"
+         id="btnAoVivo"
+         target="_blank"
+         rel="noopener">
+        <svg viewBox="0 0 24 24" class="yt-icon"><path d="M23 12s0-3.4-.43-5c-.24-.9-.94-1.6-1.84-1.84C19.13 4.72 12 4.72 12 4.72s-7.13 0-8.73.44c-.9.24-1.6.94-1.84 1.84C1 8.6 1 12 1 12s0 3.4.43 5c.24.9.94 1.6 1.84 1.84 1.6.44 8.73.44 8.73.44s7.13 0 8.73-.44c.9-.24 1.6-.94 1.84-1.84.43-1.6.43-5 .43-5zM9.8 15.4V8.6L15.8 12l-6 3.4z"/></svg>
+        AO VIVO
+      </a>
+    </div>
   </div>
-</div>
-  
   <div class="scroll-cue"></div>
 </section>
 
@@ -631,7 +515,7 @@
 <!-- ================= REDES SOCIAIS ================= -->
 <div class="social-bar">
   <div class="wrap">
-    <div class="socials socials-center">
+    <div class="socials-center">
       <a href="https://www.instagram.com/adqb_ofc" aria-label="Instagram" title="Instagram">
         <svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.85.07 1.17.05 2.02.24 2.72.5.75.28 1.36.66 1.97 1.27.6.6.98 1.21 1.27 1.96.27.7.46 1.55.5 2.72.06 1.25.07 1.65.07 4.85s0 3.6-.07 4.85c-.05 1.17-.23 2.02-.5 2.72a5.4 5.4 0 0 1-1.27 1.97c-.6.6-1.22.98-1.97 1.27-.7.27-1.55.46-2.72.5-1.25.06-1.65.07-4.85.07s-3.6 0-4.85-.07c-1.17-.05-2.02-.23-2.72-.5a5.4 5.4 0 0 1-1.96-1.27 5.4 5.4 0 0 1-1.27-1.97c-.27-.7-.46-1.55-.5-2.72C2.2 15.6 2.2 15.2 2.2 12s0-3.6.07-4.85c.05-1.17.24-2.02.5-2.72.28-.75.66-1.36 1.27-1.96A5.4 5.4 0 0 1 6.02 1.2c.7-.26 1.55-.45 2.72-.5C10 2.2 10.4 2.2 12 2.2zm0 1.8c-3.15 0-3.52 0-4.76.07-1 .04-1.55.2-1.9.34-.48.19-.83.41-1.19.77-.36.36-.58.71-.77 1.19-.14.36-.3.9-.34 1.9-.06 1.24-.07 1.61-.07 4.76s0 3.52.07 4.76c.05 1 .2 1.55.34 1.9.19.48.41.83.77 1.19.36.36.71.58 1.19.77.36.14.9.3 1.9.34 1.24.06 1.61.07 4.76.07s3.52 0 4.76-.07c1-.05 1.55-.2 1.9-.34.48-.19.83-.41 1.19-.77.36-.36.58-.71.77-1.19.14-.36.3-.9.34-1.9.06-1.24.07-1.61.07-4.76s0-3.52-.07-4.76c-.05-1-.2-1.55-.34-1.9a3.6 3.6 0 0 0-.77-1.19 3.6 3.6 0 0 0-1.19-.77c-.36-.14-.9-.3-1.9-.34-1.24-.06-1.61-.07-4.76-.07zm0 4.16a4.85 4.85 0 1 1 0 9.7 4.85 4.85 0 0 1 0-9.7zm0 1.8a3.05 3.05 0 1 0 0 6.1 3.05 3.05 0 0 0 0-6.1zm5.04-2.02a1.13 1.13 0 1 1-2.27 0 1.13 1.13 0 0 1 2.27 0z"/></svg>
       </a>
@@ -641,7 +525,7 @@
       <a href="https://www.facebook.com/AssembleiaQuatroBarras" aria-label="Facebook" title="Facebook">
         <svg viewBox="0 0 24 24"><path d="M13.5 21v-8.1h2.72l.4-3.16h-3.12V7.7c0-.92.26-1.54 1.57-1.54h1.68V3.34C15.86 3.24 14.9 3.15 13.8 3.15c-2.3 0-3.87 1.4-3.87 3.98v2.6H7.2v3.17h2.73V21h3.57z"/></svg>
       </a>
-      <a href="https://www.tiktok.com/@radio.koinonia?_t=ZM-90oi5aqWAiy&_r=1" aria-label="TikTok" title="TikTok">
+      <a href="https://www.tiktok.com/@radio.koinonia" aria-label="TikTok" title="TikTok">
         <svg viewBox="0 0 24 24"><path d="M16.5 3c.3 2.16 1.7 3.66 3.9 3.8v2.9c-1.34.03-2.53-.4-3.87-1.2v6.4c0 3.5-2.5 5.85-5.65 5.85-1.4 0-2.72-.5-3.72-1.42a5.86 5.86 0 0 1-1.7-4.36c0-3.24 2.6-5.85 5.75-5.85.3 0 .6.02.9.07v2.98a3 3 0 0 0-.9-.14 3 3 0 0 0-2.94 3c0 1.66 1.32 3 2.94 3a2.9 2.9 0 0 0 2.9-2.9V3h2.4z"/></svg>
       </a>
       <a href="https://wa.me/41995030030" aria-label="WhatsApp" title="WhatsApp">
@@ -652,14 +536,12 @@
 </div>
 
 <!-- ================= HISTÓRIA ================= -->
- 
 <section class="dark" id="historia">
-  
   <div class="wrap">
-      <span class="eyebrow">Nossa história</span>
-      <h2>Uma trajetória de <span class="script">fé</span> em Quatro Barras</h2>
-      <p>De um templo simples erguido pelas mãos da comunidade até a casa que recebe a igreja hoje, cada etapa carrega a mesma missão: levar o evangelho e transformar vidas.</p>
-    </div>
+    <span class="eyebrow">Nossa história</span>
+    <h2>Uma trajetória de <span class="script">fé</span> em Quatro Barras</h2>
+    <p>De um templo simples erguido pelas mãos da comunidade até a casa que recebe a igreja hoje, cada etapa carrega a mesma missão: levar o evangelho e transformar vidas.</p>
+
     <div class="timeline">
       <div class="timeline-line"></div>
       <div class="tl-item reveal">
@@ -717,82 +599,92 @@
 
 <!-- ================= CONGREGAÇÕES ================= -->
 <section id="congregacoes">
-  <div class="carousel-wrap">
-  <button class="carousel-btn carousel-prev-cong" aria-label="Anterior">‹</button>
-
-  <div class="cong-carousel" id="congCarousel">
-    <div class="cong-card reveal">
-  <span class="tag">Agenda Geral</span>
-  <h3>Agenda do Campo</h3>
-  <p>Agenda com todos os eventos</p> <p>Congressos e datas especiais da ADQB ao longo do ano.</p>
-  <a class="cong-btn" href="https://agenda-do-campo.netlify.app/" target="_blank" rel="noopener">Abrir Agenda</a>
-</div>
-    <div class="cong-card reveal">
-  <span class="tag">ADQB</span>
-  <h3>Sede</h3>
-  <p>Pastor local: Pastor Presidente <p>Pr. Gilson Schinemann &</p> <p>Ir. Rose Schinemann</p>
-  <a class="cong-btn" href="https://agenda-sede.netlify.app/" target="_blank" rel="noopener">Abrir Agenda</a>
-</div>
-
-<div class="cong-card reveal">
-  <span class="tag">ADQB</span>
-  <h3>Borda do Campo</h3>
-  <p>Pastor local: <p>Pr. Paulo dos Santos &</p> <p>Ir. Raquel dos Santos</p>
-  <a class="cong-btn" href="https://borda-do-campo.netlify.app/" target="_blank" rel="noopener">Abrir Agenda</a>
-</div>
-
-<div class="cong-card reveal">
-  <span class="tag">ADQB</span>
-  <h3>Florestal</h3>
-  <p>Pastor local: <p>Ev. Alon Silva &</p> <p>Ir. Kawany Silva</p>
-  <a class="cong-btn" href="https://florestal.netlify.app/" target="_blank" rel="noopener">Abrir Agenda</a>
-</div>
-
-<div class="cong-card reveal">
-  <span class="tag">ADQB</span>
-  <h3>Jardim Graciosa</h3>
-  <p>Pastor local: <p>Pr. Jose Paes &</p> <p>Ir. Roseni Paes</p>
-  <a class="cong-btn" href="https://jdgraciosa.netlify.app/" target="_blank" rel="noopener">Abrir Agenda</a>
-</div>
-
-<div class="cong-card reveal">
-  <span class="tag">ADQB</span>
-  <h3>Jardim Industrial</h3>
-  <p>Pastor local: <p>Ev. Clodair Faria &</p> <p>Ir. Vanilda Faria</p>
-  <a class="cong-btn" href="https://jd-industrial.netlify.app/" target="_blank" rel="noopener">Abrir Agenda</a>
-</div>
-
-<div class="cong-card reveal">
-  <span class="tag">ADQB</span>
-  <h3>Jardim Menino Deus</h3>
-  <p>Pastor local: <p>Pr. Edson Silva &</p> <p>Ir. Leni Silva</p>
-  <a class="cong-btn" href="https://jd-menino-deus.netlify.app/" target="_blank" rel="noopener">Abrir Agenda</a>
-</div>
-
-<div class="cong-card reveal">
-  <span class="tag">ADQB</span>
-  <h3>Palmitalzinho</h3>
-  <p>Pastor local: <p>Pr. Odair Miquelino &</p> <p>Ir. Rosilene Miquelino</p>
-  <a class="cong-btn" href="https://palmitalzinho.netlify.app/" target="_blank" rel="noopener">Abrir Agenda</a>
-</div>
-
-<div class="cong-card reveal">
-  <span class="tag">ADQB</span>
-  <h3>Jardim Patrícia</h3>
-  <p>Pastor local: <p>Pr. Erondi Kailer &</p> <p>Ir. Ivone Kailer</p>
-  <a class="cong-btn" href="https://jdpatricia.netlify.app/" target="_blank" rel="noopener">Abrir Agenda</a>
-</div>
-
-<div class="cong-card reveal">
-  <span class="tag">ADQB</span>
-  <h3>Pinheirinho</h3>
-  <p>Pastor local: <p>Pr. Marcio Córdova &</p> <p>Ir. Mirian Córdova</p>
-  <a class="cong-btn" href="https://pinheirinho.netlify.app/" target="_blank" rel="noopener">Abrir Agenda</a>
-</div>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Congregações</span>
+      <h2>Uma igreja, muitas casas</h2>
+    </div>
   </div>
+  <div class="wrap">
+    <div class="carousel-wrap">
+      <button class="carousel-btn carousel-prev-cong" aria-label="Anterior">‹</button>
 
-  <button class="carousel-btn carousel-next-cong" aria-label="Próximo">›</button>
-</div>
+      <div class="cong-carousel" id="congCarousel">
+        <div class="cong-card reveal">
+          <span class="tag">Agenda Geral</span>
+          <h3>Agenda do Campo</h3>
+          <p>Agenda com todos os eventos</p>
+          <p>Congressos e datas especiais da ADQB ao longo do ano.</p>
+          <a class="cong-btn" href="https://agenda-do-campo.netlify.app/" target="_blank" rel="noopener">Abrir Agenda</a>
+        </div>
+        <div class="cong-card reveal">
+          <span class="tag">ADQB</span>
+          <h3>Sede</h3>
+          <p>Pastor local:</p>
+          <p>Pr. Gilson Schinemann &amp; Ir. Rose Schinemann</p>
+          <a class="cong-btn" href="https://agenda-sede.netlify.app/" target="_blank" rel="noopener">Abrir Agenda</a>
+        </div>
+        <div class="cong-card reveal">
+          <span class="tag">ADQB</span>
+          <h3>Borda do Campo</h3>
+          <p>Pastor local:</p>
+          <p>Pr. Paulo dos Santos &amp; Ir. Raquel dos Santos</p>
+          <a class="cong-btn" href="https://borda-do-campo.netlify.app/" target="_blank" rel="noopener">Abrir Agenda</a>
+        </div>
+        <div class="cong-card reveal">
+          <span class="tag">ADQB</span>
+          <h3>Florestal</h3>
+          <p>Pastor local:</p>
+          <p>Ev. Alon Silva &amp; Ir. Kawany Silva</p>
+          <a class="cong-btn" href="https://florestal.netlify.app/" target="_blank" rel="noopener">Abrir Agenda</a>
+        </div>
+        <div class="cong-card reveal">
+          <span class="tag">ADQB</span>
+          <h3>Jardim Graciosa</h3>
+          <p>Pastor local:</p>
+          <p>Pr. Jose Paes &amp; Ir. Roseni Paes</p>
+          <a class="cong-btn" href="https://jdgraciosa.netlify.app/" target="_blank" rel="noopener">Abrir Agenda</a>
+        </div>
+        <div class="cong-card reveal">
+          <span class="tag">ADQB</span>
+          <h3>Jardim Industrial</h3>
+          <p>Pastor local:</p>
+          <p>Ev. Clodair Faria &amp; Ir. Vanilda Faria</p>
+          <a class="cong-btn" href="https://jd-industrial.netlify.app/" target="_blank" rel="noopener">Abrir Agenda</a>
+        </div>
+        <div class="cong-card reveal">
+          <span class="tag">ADQB</span>
+          <h3>Jardim Menino Deus</h3>
+          <p>Pastor local:</p>
+          <p>Pr. Edson Silva &amp; Ir. Leni Silva</p>
+          <a class="cong-btn" href="https://jd-menino-deus.netlify.app/" target="_blank" rel="noopener">Abrir Agenda</a>
+        </div>
+        <div class="cong-card reveal">
+          <span class="tag">ADQB</span>
+          <h3>Palmitalzinho</h3>
+          <p>Pastor local:</p>
+          <p>Pr. Odair Miquelino &amp; Ir. Rosilene Miquelino</p>
+          <a class="cong-btn" href="https://palmitalzinho.netlify.app/" target="_blank" rel="noopener">Abrir Agenda</a>
+        </div>
+        <div class="cong-card reveal">
+          <span class="tag">ADQB</span>
+          <h3>Jardim Patrícia</h3>
+          <p>Pastor local:</p>
+          <p>Pr. Erondi Kailer &amp; Ir. Ivone Kailer</p>
+          <a class="cong-btn" href="https://jdpatricia.netlify.app/" target="_blank" rel="noopener">Abrir Agenda</a>
+        </div>
+        <div class="cong-card reveal">
+          <span class="tag">ADQB</span>
+          <h3>Pinheirinho</h3>
+          <p>Pastor local:</p>
+          <p>Pr. Marcio Córdova &amp; Ir. Mirian Córdova</p>
+          <a class="cong-btn" href="https://pinheirinho.netlify.app/" target="_blank" rel="noopener">Abrir Agenda</a>
+        </div>
+      </div>
+
+      <button class="carousel-btn carousel-next-cong" aria-label="Próximo">›</button>
+    </div>
+  </div>
 </section>
 
 <!-- ================= DÍZIMOS E OFERTAS ================= -->
@@ -822,108 +714,97 @@
       <h2>Levando o evangelho além dos nossos muros</h2>
       <p>Acreditamos que a igreja existe para transformar vidas dentro e fora de Quatro Barras. Apoiamos missionários e projetos que levam esperança a novas comunidades.</p>
     </div>
+
+    <div class="sec-head reveal" style="margin-top:0;">
+      <span class="eyebrow">Registros</span>
+      <h2 style="font-size:clamp(1.6rem, 3.5vw, 2.1rem);">Nossos trabalhos em ação</h2>
+      <p>Fotos e vídeos das ações sociais e missionárias realizadas pela ADQB.</p>
+    </div>
+  </div>
+
+  <div class="wrap">
     <div class="carousel-wrap">
-  <button class="carousel-btn carousel-prev-miss" aria-label="Anterior">‹</button>
+      <button class="carousel-btn carousel-prev-media" aria-label="Anterior">‹</button>
 
-  <button class="carousel-btn carousel-next-miss" aria-label="Próximo">›</button>
-</div>
+      <div class="miss-media-carousel" id="missMediaCarousel">
+        <div class="miss-media-card reveal">
+          <video src="images/Moçambique.mp4" controls></video>
+          <p>ADQB em Moçambique</p>
+        </div>
+        <div class="miss-media-card reveal">
+          <img src="images/missao-2.jpg" alt="Missão ADQB">
+          <p>Missão</p>
+        </div>
+        <div class="miss-media-card reveal">
+          <img src="images/missao-2.jpg" alt="Missão ADQB">
+          <p>Ação Social</p>
+        </div>
+        <div class="miss-media-card reveal">
+          <img src="images/missao-2.jpg" alt="Missão ADQB">
+          <p>Ação Social</p>
+        </div>
+        <div class="miss-media-card reveal">
+          <img src="images/missao-2.jpg" alt="Missão ADQB">
+          <p>Legenda da foto 5</p>
+        </div>
+      </div>
+
+      <button class="carousel-btn carousel-next-media" aria-label="Próximo">›</button>
+    </div>
   </div>
-  <div class="wrap">
-  <div class="sec-head reveal" style="margin-top:60px;">
-  <span class="eyebrow">Registros</span>
-  <h2 style="font-size:clamp(1.6rem, 3.5vw, 2.1rem);">Nossos trabalhos em ação</h2>
-  <p>Fotos e vídeos das ações sociais e missionárias realizadas pela ADQB.</p>
-</div>
-</div>
-
-<div class="carousel-wrap">
-  
-  <button class="carousel-btn carousel-prev-media" aria-label="Anterior">‹</button>
-
-  <div class="miss-media-carousel" id="missMediaCarousel">
-
-    <div class="miss-media-card reveal">
-      <video src="images/Moçambique.mp4" alt="Missão em Moçambique" controls></video>
-      <p>ADQB em Moçambique</p>
-    </div>
-
-    <div class="miss-media-card reveal">
-      <img src="images/missao-2.jpg" alt="Ação social — descreva aqui">
-      <p>Legenda da foto 2</p>
-    </div>
-
-    <div class="miss-media-card reveal">
-      <img src="images/missao-2.jpg" alt="Ação social — descreva aqui">
-      <p>Legenda da foto 3</p>
-    </div>
-
-    <div class="miss-media-card reveal">
-      <img src="images/missao-2.jpg" alt="Ação social — descreva aqui">
-      <p>Legenda da foto 4</p>
-    </div>
-
-    <div class="miss-media-card reveal">
-      <img src="images/missao-2.jpg" alt="Ação social — descreva aqui">
-      <p>Legenda da foto 5</p>
-    </div>
-
-  </div>
-
-  <button class="carousel-btn carousel-next-media" aria-label="Próximo">›</button>
-</div>
 </section>
-<div class="sec-head reveal" style="margin-top:60px;">
-  <div class="wrap">
-  <span class="eyebrow">Diretoria adqb</span>
-  </div>
-</div>
 
-<!-- ================= Diretoria ================= -->
+<!-- ================= DIRETORIA ================= -->
 <section id="Diretoria">
-
-<div class="carousel-wrap">
-  <button class="carousel-btn carousel-prev" aria-label="Anterior">‹</button>
-
-  <div class="lideranca-carousel" id="liderancaCarousel">
-    <div class="lider-card reveal">
-  <img class="lider-foto" src="images/diretoria-gilson.png" alt="Pastor Gilson Elias Schinemann">
-  <h4>Pr. Gilson Elias Schinemann</h4>
-  <span class="role">Presidente ADQB</span>
-</div>
-<div class="lider-card reveal">
-  <img class="lider-foto" src="images/diretoria-erondi.jpg" alt="Pastor Erondi Fagundes Kailer">
-  <h4>Pr. Erondi Fagundes Kailer</h4>
-  <span class="role">Vice-presidente</span>
-</div>
-<div class="lider-card reveal">
-  <img class="lider-foto" src="images/diretoria-amauri.jpg" alt="Evangelista Amauri Souza Brandão Junior">
-  <h4>Ev. Amauri Souza Brandão Junior</h4>
-  <span class="role">Superintendente Administrativo</span>
-</div>
-<div class="lider-card reveal">
-  <img class="lider-foto" src="images/diretoria-rene.jpg" alt="Pastor Rene Deomar Lemos Silvério">
-  <h4>Pr. Rene Deomar Lemos Silvério</h4>
-  <span class="role">Superintendente de Obras</span>
-</div>
-<div class="lider-card reveal">
-  <img class="lider-foto" src="images/diretoria-carlos.jpg" alt="Evangelista Carlos Souza">
-  <h4>Ev. Carlos Souza</h4>
-  <span class="role">Superintendente Financeiro</span>
-</div>
-<div class="lider-card reveal">
-  <img class="lider-foto" src="images/diretoria-alon.jpg" alt="Evangelista Alon da Cruz Silva">
-  <h4>Ev. Alon da Cruz Silva</h4>
-  <span class="role">Superintendente do Minitério</span>
-</div>
-<div class="lider-card reveal">
-  <img class="lider-foto" src="images/diretoria-jose.jpg" alt="Pastor Jose Carlos">
-  <h4>Pr. Jose Carlos</h4>
-  <span class="role">Superintendente de Patrimônio</span>
-</div>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Diretoria ADQB</span>
+      <h2>Quem lidera com a gente</h2>
+    </div>
   </div>
-
-  <button class="carousel-btn carousel-next" aria-label="Próximo">›</button>
-</div>
+  <div class="wrap">
+    <div class="carousel-wrap">
+      <button class="carousel-btn carousel-prev" aria-label="Anterior">‹</button>
+      <div class="lideranca-carousel" id="liderancaCarousel">
+        <div class="lider-card reveal">
+          <img class="lider-foto" src="images/diretoria-gilson.png" alt="Pastor Gilson Elias Schinemann">
+          <h4>Pr. Gilson Elias Schinemann</h4>
+          <span class="role">Presidente ADQB</span>
+        </div>
+        <div class="lider-card reveal">
+          <img class="lider-foto" src="images/diretoria-erondi.jpg" alt="Pastor Erondi Fagundes Kailer">
+          <h4>Pr. Erondi Fagundes Kailer</h4>
+          <span class="role">Vice-presidente</span>
+        </div>
+        <div class="lider-card reveal">
+          <img class="lider-foto" src="images/diretoria-amauri.jpg" alt="Evangelista Amauri Souza Brandão Junior">
+          <h4>Ev. Amauri Souza Brandão Junior</h4>
+          <span class="role">Superintendente Administrativo</span>
+        </div>
+        <div class="lider-card reveal">
+          <img class="lider-foto" src="images/diretoria-rene.jpg" alt="Pastor Rene Deomar Lemos Silvério">
+          <h4>Pr. Rene Deomar Lemos Silvério</h4>
+          <span class="role">Superintendente de Obras</span>
+        </div>
+        <div class="lider-card reveal">
+          <img class="lider-foto" src="images/diretoria-carlos.jpg" alt="Evangelista Carlos Souza">
+          <h4>Ev. Carlos Souza</h4>
+          <span class="role">Superintendente Financeiro</span>
+        </div>
+        <div class="lider-card reveal">
+          <img class="lider-foto" src="images/diretoria-alon.jpg" alt="Evangelista Alon da Cruz Silva">
+          <h4>Ev. Alon da Cruz Silva</h4>
+          <span class="role">Superintendente do Ministério</span>
+        </div>
+        <div class="lider-card reveal">
+          <img class="lider-foto" src="images/diretoria-jose.jpg" alt="Pastor Jose Carlos">
+          <h4>Pr. Jose Carlos</h4>
+          <span class="role">Superintendente de Patrimônio</span>
+        </div>
+      </div>
+      <button class="carousel-btn carousel-next" aria-label="Próximo">›</button>
+    </div>
+  </div>
 </section>
 
 <!-- ================= SOBRE ================= -->
@@ -955,32 +836,20 @@
       <p>Fotos da igreja e cultos da ADQB.</p>
     </div>
     <div class="midia-grid reveal">
-  <div class="g1"><img src="images/1 igreja.jpg" alt="Fachada da sede da ADQB"></div>
-  <div class="g1"><img src="images/ADQB SEDE.png" alt="Primeiro templo da ADQB"></div>
-  <div class="g2"><img src="images/bleia.png" alt="Celebração dos 115 anos"></div>
+      <div class="g1"><img src="images/1 igreja.jpg" alt="Fachada da sede da ADQB"></div>
+      <div class="g1"><img src="images/ADQB SEDE.png" alt="Primeiro templo da ADQB"></div>
+      <div class="g2"><img src="images/bleia.png" alt="Celebração dos 115 anos"></div>
 
-  <div class="video-embed" style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden;">
-    <iframe
-      style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;"
-      src="https://www.youtube.com/embed/VJBpdaYQG00"
-      title="Último culto - ADQB"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen>
-    </iframe>
-  </div>
-
-  <!--
-  <div class="video-embed" style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden;">
-    <iframe
-      style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;"
-      src="https://www.youtube.com/embed/live_stream?channel=UCNUiTB5HLrpakeD554pqdkg"
-      title="Culto ao vivo - ADQB"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen>
-    </iframe>
-  </div>
-  -->
-</div>
+      <div class="video-embed" style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden;">
+        <iframe
+          style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;"
+          src="https://www.youtube.com/embed/VJBpdaYQG00"
+          title="Último culto - ADQB"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1001,7 +870,7 @@
           <li><a href="#historia">Nossa história</a></li>
           <li><a href="#congregacoes">Congregações</a></li>
           <li><a href="#missoes">Missões</a></li>
-          <li><a href="#adqb">ADQB</a></li>
+          <li><a href="#Diretoria">Diretoria</a></li>
         </ul>
       </div>
       <div>
@@ -1015,7 +884,7 @@
       <div>
         <h5>Contato</h5>
         <ul>
-          <li>Rua Manoel Alves dos Santos. n° 5 - Jardim Pinheiros</li>
+          <li>Rua Manoel Alves dos Santos, n° 5 - Jardim Pinheiros</li>
           <li>(41) 99503-0030</li>
           <li>adqb.adm@hotmail.com</li>
         </ul>
@@ -1048,80 +917,53 @@
   }));
 
   const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, { threshold:.15 });
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: .15 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-  const carousel = document.getElementById('liderancaCarousel');
-const prevBtn = document.querySelector('.carousel-prev');
-const nextBtn = document.querySelector('.carousel-next');
-if(carousel && prevBtn && nextBtn){
-  const scrollAmount = () => carousel.querySelector('.lider-card').offsetWidth + 20;
-  prevBtn.addEventListener('click', () => {
-    carousel.scrollBy({ left: -scrollAmount(), behavior: 'smooth' });
-  });
-  nextBtn.addEventListener('click', () => {
-    carousel.scrollBy({ left: scrollAmount(), behavior: 'smooth' });
-  });
-}
 
-const missMediaCarousel = document.getElementById('missMediaCarousel');
-const missMediaPrevBtn = document.querySelector('.carousel-prev-media');
-const missMediaNextBtn = document.querySelector('.carousel-next-media');
-if(missMediaCarousel && missMediaPrevBtn && missMediaNextBtn){
-  const missMediaScrollAmount = () => missMediaCarousel.querySelector('.miss-media-card').offsetWidth + 20;
-  missMediaPrevBtn.addEventListener('click', () => {
-    missMediaCarousel.scrollBy({ left: -missMediaScrollAmount(), behavior: 'smooth' });
-  });
-  missMediaNextBtn.addEventListener('click', () => {
-    missMediaCarousel.scrollBy({ left: missMediaScrollAmount(), behavior: 'smooth' });
-  });
-}
+  // Função genérica para configurar qualquer carrossel com botões prev/next
+  function setupCarousel(carouselId, prevSelector, nextSelector, itemSelector) {
+    const carousel = document.getElementById(carouselId);
+    const prevBtn = document.querySelector(prevSelector);
+    const nextBtn = document.querySelector(nextSelector);
+    if (!carousel || !prevBtn || !nextBtn) return;
 
-const congCarousel = document.getElementById('congCarousel');
-const congPrevBtn = document.querySelector('.carousel-prev-cong');
-const congNextBtn = document.querySelector('.carousel-next-cong');
-if(congCarousel && congPrevBtn && congNextBtn){
-  const congScrollAmount = () => congCarousel.querySelector('.cong-card').offsetWidth + 20;
-  congPrevBtn.addEventListener('click', () => {
-    congCarousel.scrollBy({ left: -congScrollAmount(), behavior: 'smooth' });
-  });
-  congNextBtn.addEventListener('click', () => {
-    congCarousel.scrollBy({ left: congScrollAmount(), behavior: 'smooth' });
-  });
-}
-const missCarousel = document.getElementById('missCarousel');
-const missPrevBtn = document.querySelector('.carousel-prev-miss');
-const missNextBtn = document.querySelector('.carousel-next-miss');
-if(missCarousel && missPrevBtn && missNextBtn){
-  const missScrollAmount = () => missCarousel.querySelector('.miss-card').offsetWidth + 20;
-  missPrevBtn.addEventListener('click', () => {
-    missCarousel.scrollBy({ left: -missScrollAmount(), behavior: 'smooth' });
-  });
-  missNextBtn.addEventListener('click', () => {
-    missCarousel.scrollBy({ left: missScrollAmount(), behavior: 'smooth' });
-  });
-}
+    const item = carousel.querySelector(itemSelector);
+    if (!item) return;
 
-// ---- Botão AO VIVO: abre app do YouTube quando possível ----
-const btnAoVivo = document.getElementById('btnAoVivo');
-if (btnAoVivo) {
-  btnAoVivo.addEventListener('click', function(e) {
-    const channelId = 'UCNUiTB5HLrpakeD554pqdkg';
-    const isMobile = /Android|iPhone|iPad/i.test(navigator.userAgent);
+    const scrollAmount = () => item.offsetWidth + 20;
+    prevBtn.addEventListener('click', () => {
+      carousel.scrollBy({ left: -scrollAmount(), behavior: 'smooth' });
+    });
+    nextBtn.addEventListener('click', () => {
+      carousel.scrollBy({ left: scrollAmount(), behavior: 'smooth' });
+    });
+  }
 
-    if (isMobile) {
-      e.preventDefault();
-      const webUrl = `https://www.youtube.com/channel/${channelId}/live`;
-      const appUrl = `vnd.youtube://channel/${channelId}`;
+  setupCarousel('liderancaCarousel', '.carousel-prev', '.carousel-next', '.lider-card');
+  setupCarousel('missMediaCarousel', '.carousel-prev-media', '.carousel-next-media', '.miss-media-card');
+  setupCarousel('congCarousel', '.carousel-prev-cong', '.carousel-next-cong', '.cong-card');
 
-      window.location.href = appUrl;
-      setTimeout(function () {
-        window.location.href = webUrl;
-      }, 800);
-    }
-    // Desktop: segue o href normal (abre no navegador/YouTube)
-  });
-}
+  // ---- Botão AO VIVO: abre app do YouTube quando possível ----
+  const btnAoVivo = document.getElementById('btnAoVivo');
+  if (btnAoVivo) {
+    btnAoVivo.addEventListener('click', function (e) {
+      const channelId = 'UCNUiTB5HLrpakeD554pqdkg';
+      const isMobile = /Android|iPhone|iPad/i.test(navigator.userAgent);
+
+      if (isMobile) {
+        e.preventDefault();
+        const webUrl = `https://www.youtube.com/channel/${channelId}/live`;
+        const appUrl = `vnd.youtube://channel/${channelId}`;
+
+        window.location.href = appUrl;
+        setTimeout(function () {
+          window.location.href = webUrl;
+        }, 800);
+      }
+      // Desktop: segue o href normal (abre no navegador/YouTube)
+    });
+  }
 </script>
 </body>
 </html>
