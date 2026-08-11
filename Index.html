@@ -335,7 +335,7 @@
   .miss-card h4{ font-size:1.05rem; margin-bottom:8px; color:var(--marfim); }
   .miss-card p{ font-size:.88rem; color:var(--texto-claro); }
 
-  /* ---------- ABQB / Liderança ---------- */
+  /* ---------- ADQB / Liderança ---------- */
   .carousel-wrap{
   position:relative;
   display:flex;
@@ -404,6 +404,78 @@
 
 @media(max-width:768px){
   .cong-carousel .cong-card{ width:250px; }
+}
+
+.miss-media-carousel{
+  display:flex;
+  gap:20px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  scroll-behavior:smooth;
+  padding:6px 4px 20px;
+  -webkit-overflow-scrolling:touch;
+}
+.miss-media-carousel::-webkit-scrollbar{ height:6px; }
+.miss-media-carousel::-webkit-scrollbar-thumb{ background:var(--dourado-suave); border-radius:10px; }
+.miss-media-carousel::-webkit-scrollbar-track{ background:transparent; }
+
+.miss-media-card{
+  flex:0 0 auto;
+  width:280px;
+  scroll-snap-align:start;
+  background: rgba(0,0,0,.15);
+  border:1px solid var(--dourado-suave);
+  border-radius:6px;
+  overflow:hidden;
+}
+.miss-media-card img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  display:block;
+}
+
+.miss-media-card video{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  display:block;
+}
+.miss-media-card .video-embed{
+  border-radius:0;
+}
+.miss-media-card p{
+  padding:12px 14px;
+  font-size:.85rem;
+  color: var(--texto-claro);
+}
+
+@media(max-width:768px){
+  .miss-media-card{ width:240px; }
+  .miss-media-card img{ height:150px; }
+}
+
+.miss-carousel{
+  display:flex;
+  gap:20px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  scroll-behavior:smooth;
+  padding:6px 4px 20px;
+  -webkit-overflow-scrolling:touch;
+}
+.miss-carousel::-webkit-scrollbar{ height:6px; }
+.miss-carousel::-webkit-scrollbar-thumb{ background:var(--dourado-suave); border-radius:10px; }
+.miss-carousel::-webkit-scrollbar-track{ background:transparent; }
+
+.miss-carousel .miss-card{
+  flex:0 0 auto;
+  width:230px;
+  scroll-snap-align:start;
+}
+
+@media(max-width:768px){
+  .miss-carousel .miss-card{ width:210px; }
 }
 
 .lider-foto{
@@ -750,32 +822,65 @@
       <h2>Levando o evangelho além dos nossos muros</h2>
       <p>Acreditamos que a igreja existe para transformar vidas dentro e fora de Quatro Barras. Apoiamos missionários e projetos que levam esperança a novas comunidades.</p>
     </div>
-    <div class="missoes-grid">
-      <div class="miss-card reveal">
-        <span class="num">01</span>
-        <h4>Missões locais</h4>
-        <p>Ações sociais e evangelísticas nos bairros de Quatro Barras e região.</p>
-      </div>
-      <div class="miss-card reveal">
-        <span class="num">02</span>
-        <h4>Missões nacionais</h4>
-        <p>Apoio a igrejas e missionários em outras regiões do Brasil.</p>
-      </div>
-      <div class="miss-card reveal">
-        <span class="num">03</span>
-        <h4>Missões transculturais</h4>
-        <p>Parcerias com campos missionários internacionais.</p>
-      </div>
-      <div class="miss-card reveal">
-        <span class="num">04</span>
-        <h4>Como participar</h4>
-        <p>Ofertas específicas para missões e voluntariado em viagens missionárias.</p>
-      </div>
-    </div>
+    <div class="carousel-wrap">
+  <button class="carousel-btn carousel-prev-miss" aria-label="Anterior">‹</button>
+
+  <button class="carousel-btn carousel-next-miss" aria-label="Próximo">›</button>
+</div>
   </div>
+  <div class="wrap">
+  <div class="sec-head reveal" style="margin-top:60px;">
+  <span class="eyebrow">Registros</span>
+  <h2 style="font-size:clamp(1.6rem, 3.5vw, 2.1rem);">Nossos trabalhos em ação</h2>
+  <p>Fotos e vídeos das ações sociais e missionárias realizadas pela ADQB.</p>
+</div>
+</div>
+
+<div class="carousel-wrap">
+  
+  <button class="carousel-btn carousel-prev-media" aria-label="Anterior">‹</button>
+
+  <div class="miss-media-carousel" id="missMediaCarousel">
+
+    <div class="miss-media-card reveal">
+      <video src="images/Moçambique.mp4" alt="Missão em Moçambique" controls></video>
+      <p>ADQB em Moçambique</p>
+    </div>
+
+    <div class="miss-media-card reveal">
+      <img src="images/missao-2.jpg" alt="Ação social — descreva aqui">
+      <p>Legenda da foto 2</p>
+    </div>
+
+    <div class="miss-media-card reveal">
+      <img src="images/missao-2.jpg" alt="Ação social — descreva aqui">
+      <p>Legenda da foto 3</p>
+    </div>
+
+    <div class="miss-media-card reveal">
+      <img src="images/missao-2.jpg" alt="Ação social — descreva aqui">
+      <p>Legenda da foto 4</p>
+    </div>
+
+    <div class="miss-media-card reveal">
+      <img src="images/missao-2.jpg" alt="Ação social — descreva aqui">
+      <p>Legenda da foto 5</p>
+    </div>
+
+  </div>
+
+  <button class="carousel-btn carousel-next-media" aria-label="Próximo">›</button>
+</div>
 </section>
+<div class="sec-head reveal" style="margin-top:60px;">
+  <div class="wrap">
+  <span class="eyebrow">Diretoria adqb</span>
+  </div>
+</div>
 
 <!-- ================= Diretoria ================= -->
+<section id="Diretoria">
+
 <div class="carousel-wrap">
   <button class="carousel-btn carousel-prev" aria-label="Anterior">‹</button>
 
@@ -819,6 +924,7 @@
 
   <button class="carousel-btn carousel-next" aria-label="Próximo">›</button>
 </div>
+</section>
 
 <!-- ================= SOBRE ================= -->
 <section class="dark" id="sobre">
@@ -856,7 +962,7 @@
   <div class="video-embed" style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden;">
     <iframe
       style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;"
-      src="https://www.youtube.com/embed/S77RwvbQv2o"
+      src="https://www.youtube.com/embed/VJBpdaYQG00"
       title="Último culto - ADQB"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowfullscreen>
@@ -917,7 +1023,7 @@
     </div>
     <div class="footer-bottom">
       <span>© 2026 Assembleia de Deus em Quatro Barras. Todos os direitos reservados.</span>
-      <span>Desenvolvedor Dc Alexsander Souza</span>
+      <span>Desenvolvido por Alexsander Souza</span>
     </div>
   </div>
 </footer>
@@ -957,6 +1063,20 @@ if(carousel && prevBtn && nextBtn){
     carousel.scrollBy({ left: scrollAmount(), behavior: 'smooth' });
   });
 }
+
+const missMediaCarousel = document.getElementById('missMediaCarousel');
+const missMediaPrevBtn = document.querySelector('.carousel-prev-media');
+const missMediaNextBtn = document.querySelector('.carousel-next-media');
+if(missMediaCarousel && missMediaPrevBtn && missMediaNextBtn){
+  const missMediaScrollAmount = () => missMediaCarousel.querySelector('.miss-media-card').offsetWidth + 20;
+  missMediaPrevBtn.addEventListener('click', () => {
+    missMediaCarousel.scrollBy({ left: -missMediaScrollAmount(), behavior: 'smooth' });
+  });
+  missMediaNextBtn.addEventListener('click', () => {
+    missMediaCarousel.scrollBy({ left: missMediaScrollAmount(), behavior: 'smooth' });
+  });
+}
+
 const congCarousel = document.getElementById('congCarousel');
 const congPrevBtn = document.querySelector('.carousel-prev-cong');
 const congNextBtn = document.querySelector('.carousel-next-cong');
@@ -967,6 +1087,18 @@ if(congCarousel && congPrevBtn && congNextBtn){
   });
   congNextBtn.addEventListener('click', () => {
     congCarousel.scrollBy({ left: congScrollAmount(), behavior: 'smooth' });
+  });
+}
+const missCarousel = document.getElementById('missCarousel');
+const missPrevBtn = document.querySelector('.carousel-prev-miss');
+const missNextBtn = document.querySelector('.carousel-next-miss');
+if(missCarousel && missPrevBtn && missNextBtn){
+  const missScrollAmount = () => missCarousel.querySelector('.miss-card').offsetWidth + 20;
+  missPrevBtn.addEventListener('click', () => {
+    missCarousel.scrollBy({ left: -missScrollAmount(), behavior: 'smooth' });
+  });
+  missNextBtn.addEventListener('click', () => {
+    missCarousel.scrollBy({ left: missScrollAmount(), behavior: 'smooth' });
   });
 }
 
