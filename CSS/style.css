@@ -118,9 +118,9 @@
   /* ---------- NAV ---------- */
   header {
     position:fixed;
-    top: 9px;
+    top: 0;
     left: 0;
-    right: 8px;
+    right: 0;
     z-index: 1000;
     padding: 15px 0px;
     transition: background .35s ease, padding .35s ease, box-shadow .35s ease;
