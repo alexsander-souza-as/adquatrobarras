@@ -33,6 +33,21 @@
     color: var(--verde-profundo);
     overflow-x:hidden;
     line-height:1.6;
+    transition: background-color .6s ease, color .6s ease;
+  }
+  body, body *{
+    transition: background-color .6s ease, border-color .6s ease, color .6s ease;
+  }
+
+  /* ---------- Tema EN-US: paleta azul ---------- */
+  body.lang-en{
+    --verde-profundo:#0a1c33;
+    --verde-medio:#12294a;
+    --verde-suave:#1b3a63;
+    --preto:#050d1a;
+    --dourado:#6fa8dc;
+    --dourado-claro:#a9cdef;
+    --dourado-suave: rgba(111,168,220,0.35);
   }
   img{max-width:100%; display:block;}
   a{color:inherit; text-decoration:none;}
@@ -67,6 +82,7 @@
     box-shadow:0 8px 24px rgba(0,0,0,.25);
   }
   nav.wrap{ display:flex; align-items:center; justify-content:space-between; gap:20px;}
+  .nav-right{ display:flex; align-items:center; gap:22px; }
   .brand{ display:flex; align-items:center; gap:3px; }
   .brand img{
     width:56px; height:96px;
@@ -458,6 +474,41 @@
     .footer-top{ grid-template-columns:1fr; }
     .wrap{ padding:0 20px; }
   }
+
+  /* ---------- SELETOR DE IDIOMA ---------- */
+  .lang-toggle{
+    display:inline-flex;
+    align-items:center;
+    gap:2px;
+    background: rgba(246,241,228,.06);
+    border:1px solid rgba(201,165,74,.3);
+    border-radius:20px;
+    padding:3px;
+  }
+  .lang-toggle button{
+    border:none;
+    background:transparent;
+    cursor:pointer;
+    font-size:16px;
+    line-height:1;
+    padding:6px 8px;
+    border-radius:16px;
+    opacity:.5;
+    transition: opacity .25s ease, background .25s ease, transform .15s ease;
+  }
+  .lang-toggle button:hover{ transform:scale(1.08); }
+  .lang-toggle button.active{
+    opacity:1;
+  }
+  #lang-pt.active{
+    background: linear-gradient(135deg, #009c3b, #ffdf00 55%, #009c3b);
+    box-shadow: 0 0 0 1px rgba(0,156,59,.6);
+  }
+  #lang-en.active{
+    background: linear-gradient(135deg, #3c3b6e, #b22234 55%, #ffffff);
+    box-shadow: 0 0 0 1px rgba(178,34,52,.6);
+  }
+  .lang-toggle button:focus-visible{ outline:2px solid var(--dourado); outline-offset:2px; }
 </style>
 </head>
 <body>
@@ -466,33 +517,39 @@
   <nav class="wrap">
     <a href="#inicio" class="brand">
       <img src="images/pom.png" alt="Logo pomba ADQB">
-      <span class="brand-text"><strong>ADQB</strong><span>Assembleia de Deus · Quatro Barras</span></span>
+      <span class="brand-text"><strong>ADQB</strong><span data-i18n="brand_sub">Assembleia de Deus · Quatro Barras</span></span>
     </a>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#historia">Nossa História</a></li>
-      <li><a href="#congregacoes">Congregações</a></li>
-      <li><a href="#missoes">Missões</a></li>
-      <li><a href="#Diretoria">Diretoria</a></li>
-      <li><a href="#sobre">Sobre</a></li>
-      <li><a href="#midia">Mídia</a></li>
-      <li><a href="#dizimos" class="nav-cta">Dízimos e Ofertas</a></li>
-    </ul>
-    <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <div class="nav-right">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#historia" data-i18n="nav_historia">Nossa História</a></li>
+        <li><a href="#congregacoes" data-i18n="nav_congregacoes">Congregações</a></li>
+        <li><a href="#missoes" data-i18n="nav_missoes">Missões</a></li>
+        <li><a href="#Diretoria" data-i18n="nav_diretoria">Diretoria</a></li>
+        <li><a href="#sobre" data-i18n="nav_sobre">Sobre</a></li>
+        <li><a href="#midia" data-i18n="nav_midia">Mídia</a></li>
+        <li><a href="#dizimos" class="nav-cta" data-i18n="nav_dizimos">Dízimos e Ofertas</a></li>
+      </ul>
+      <div class="lang-toggle">
+        <button id="lang-pt" onclick="setLanguage('pt')" aria-label="Português (Brasil)">🇧🇷</button>
+        <button id="lang-en" onclick="setLanguage('en')" aria-label="English (US)">🇺🇸</button>
+      </div>
+      <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
   </nav>
 </header>
 
 <section class="hero" id="inicio">
   <div class="hero-cta-row">
     <div class="wrap">
-      <a href="#sobre" class="btn btn-ghost">Sobre nós</a>
-      <a href="#dizimos" class="btn btn-ghost">Dízimos e Ofertas</a>
+      <a href="#sobre" class="btn btn-ghost" data-i18n="nav_sobre_btn">Sobre nós</a>
+      <a href="#dizimos" class="btn btn-ghost" data-i18n="nav_dizimos_btn">Dízimos e Ofertas</a>
       <a href="https://www.youtube.com/channel/UCNUiTB5HLrpakeD554pqdkg/live"
          class="btn btn-live"
          id="btnAoVivo"
          target="_blank"
          rel="noopener">
         <svg viewBox="0 0 24 24" class="yt-icon"><path d="M23 12s0-3.4-.43-5c-.24-.9-.94-1.6-1.84-1.84C19.13 4.72 12 4.72 12 4.72s-7.13 0-8.73.44c-.9.24-1.6.94-1.84 1.84C1 8.6 1 12 1 12s0 3.4.43 5c.24.9.94 1.6 1.84 1.84 1.6.44 8.73.44 8.73.44s7.13 0 8.73-.44c.9-.24 1.6-.94 1.84-1.84.43-1.6.43-5 .43-5zM9.8 15.4V8.6L15.8 12l-6 3.4z"/></svg>
-        AO VIVO
+        <span data-i18n="nav_aovivo">AO VIVO</span>
       </a>
     </div>
   </div>
@@ -501,14 +558,14 @@
 
 <div class="ticker" aria-hidden="true">
   <div class="ticker-track">
-    <span>115 ANOS DE ASSEMBLEIA DE DEUS NO BRASIL</span><span class="sep">✦</span>
-    <span>UNIDADE</span><span class="sep">✦</span>
-    <span>MISSÃO</span><span class="sep">✦</span>
-    <span>ASSEMBLEIA DE DEUS EM QUATRO BARRAS</span><span class="sep">✦</span>
-    <span>115 ANOS DE FÉ</span><span class="sep">✦</span>
-    <span>UNIDADE</span><span class="sep">✦</span>
-    <span>MISSÃO</span><span class="sep">✦</span>
-    <span>ASSEMBLEIA DE DEUS EM QUATRO BARRAS</span><span class="sep">✦</span>
+    <span data-i18n="ticker_1">115 ANOS DE ASSEMBLEIA DE DEUS NO BRASIL</span><span class="sep">✦</span>
+    <span data-i18n="ticker_2">UNIDADE</span><span class="sep">✦</span>
+    <span data-i18n="ticker_3">MISSÃO</span><span class="sep">✦</span>
+    <span data-i18n="ticker_4">ASSEMBLEIA DE DEUS EM QUATRO BARRAS</span><span class="sep">✦</span>
+    <span data-i18n="ticker_5">115 ANOS DE FÉ</span><span class="sep">✦</span>
+    <span data-i18n="ticker_2">UNIDADE</span><span class="sep">✦</span>
+    <span data-i18n="ticker_3">MISSÃO</span><span class="sep">✦</span>
+    <span data-i18n="ticker_4">ASSEMBLEIA DE DEUS EM QUATRO BARRAS</span><span class="sep">✦</span>
   </div>
 </div>
 
@@ -538,9 +595,9 @@
 <!-- ================= HISTÓRIA ================= -->
 <section class="dark" id="historia">
   <div class="wrap">
-    <span class="eyebrow">Nossa história</span>
-    <h2>Uma trajetória de <span class="script">fé</span> em Quatro Barras</h2>
-    <p>De um templo simples erguido pelas mãos da comunidade até a casa que recebe a igreja hoje, cada etapa carrega a mesma missão: levar o evangelho e transformar vidas.</p>
+    <span class="eyebrow" data-i18n="historia_label">Nossa história</span>
+    <h2 data-i18n-html="historia_titulo_html">Uma trajetória de <span class="script">fé</span> em Quatro Barras</h2>
+    <p data-i18n="historia_intro">De um templo simples erguido pelas mãos da comunidade até a casa que recebe a igreja hoje, cada etapa carrega a mesma missão: levar o evangelho e transformar vidas.</p>
 
     <div class="timeline">
       <div class="timeline-line"></div>
@@ -548,9 +605,9 @@
         <div class="tl-media"></div>
         <div class="tl-dot"></div>
         <div class="tl-text">
-          <span class="eyebrow">As origens</span>
-          <h3>A Assembleia de Deus chega ao Brasil</h3>
-          <p>Em 1911, a Assembleia de Deus inicia sua história no Brasil, trazendo consigo uma missão de fé que, com o tempo, chegaria a Quatro Barras e a tantas outras cidades do país.</p>
+          <span class="eyebrow" data-i18n="historia_1_label">As origens</span>
+          <h3 data-i18n="historia_1_titulo">A Assembleia de Deus chega ao Brasil</h3>
+          <p data-i18n="historia_1_texto">Em 1911, a Assembleia de Deus inicia sua história no Brasil, trazendo consigo uma missão de fé que, com o tempo, chegaria a Quatro Barras e a tantas outras cidades do país.</p>
         </div>
       </div>
 
@@ -558,14 +615,14 @@
         <div class="tl-media">
           <figure class="tl-photo">
             <img src="images/1 igreja.jpg" alt="Primeiro templo da Assembleia de Deus em Quatro Barras">
-            <figcaption>Nosso primeiro templo</figcaption>
+            <figcaption data-i18n="historia_1_legenda">Nosso primeiro templo</figcaption>
           </figure>
         </div>
         <div class="tl-dot"></div>
         <div class="tl-text">
-          <span class="eyebrow">Um templo simples</span>
-          <h3>Construído com fé e trabalho</h3>
-          <p>Nasce em Quatro Barras o primeiro templo da nossa comunidade: simples na estrutura, mas profundo na fé que reunia as famílias em oração, comunhão e ensino da Palavra.</p>
+          <span class="eyebrow" data-i18n="historia_2_label">Um templo simples</span>
+          <h3 data-i18n="historia_2_titulo">Construído com fé e trabalho</h3>
+          <p data-i18n="historia_2_texto">Nasce em Quatro Barras o primeiro templo da nossa comunidade: simples na estrutura, mas profundo na fé que reunia as famílias em oração, comunhão e ensino da Palavra.</p>
         </div>
       </div>
 
@@ -573,9 +630,9 @@
         <div class="tl-media"></div>
         <div class="tl-dot"></div>
         <div class="tl-text">
-          <span class="eyebrow">Uma missão que cresce</span>
-          <h3>115 anos de fé, unidade e missão</h3>
-          <p>Ao longo das décadas, novas gerações se levantaram, novas congregações nasceram e o evangelho continuou sendo levado adiante, transformando vidas e famílias em toda a região.</p>
+          <span class="eyebrow" data-i18n="historia_3_label">Uma missão que cresce</span>
+          <h3 data-i18n="historia_3_titulo">115 anos de fé, unidade e missão</h3>
+          <p data-i18n="historia_3_texto">Ao longo das décadas, novas gerações se levantaram, novas congregações nasceram e o evangelho continuou sendo levado adiante, transformando vidas e famílias em toda a região.</p>
         </div>
       </div>
 
@@ -583,14 +640,14 @@
         <div class="tl-media">
           <figure class="tl-photo">
             <img src="images/sede.jpg" alt="Sede atual da Assembleia de Deus em Quatro Barras">
-            <figcaption>O igreja Sede da ADQB hoje</figcaption>
+            <figcaption data-i18n="historia_3_legenda">O igreja Sede da ADQB hoje</figcaption>
           </figure>
         </div>
         <div class="tl-dot"></div>
         <div class="tl-text">
-          <span class="eyebrow">A mesma fé, uma nova casa</span>
-          <h3>A Sede que recebe a igreja hoje</h3>
-          <p>Hoje a ADQB conta com um templo sede que reflete o cuidado e o crescimento da nossa história — de portas abertas para receber quem chega, do jeito que sempre foi.</p>
+          <span class="eyebrow" data-i18n="historia_4_label">A mesma fé, uma nova casa</span>
+          <h3 data-i18n="historia_4_titulo">A Sede que recebe a igreja hoje</h3>
+          <p data-i18n="historia_4_texto">Hoje a ADQB conta com um templo sede que reflete o cuidado e o crescimento da nossa história — de portas abertas para receber quem chega, do jeito que sempre foi.</p>
         </div>
       </div>
     </div>
@@ -601,8 +658,8 @@
 <section id="congregacoes">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="eyebrow">Congregações</span>
-      <h2>Uma igreja, um só corpo</h2>
+      <span class="eyebrow" data-i18n="congregacoes_label">Congregações</span>
+      <h2 data-i18n="congregacoes_titulo">Uma igreja, um só corpo</h2>
     </div>
   </div>
   <div class="wrap">
@@ -611,74 +668,74 @@
 
       <div class="cong-carousel" id="congCarousel">
         <div class="cong-card reveal">
-          <span class="tag">Agenda Geral</span>
-          <h3>Agenda do Campo</h3>
-          <p>Agenda com todos os eventos</p>
-          <p>Congressos e datas especiais da ADQB ao longo do ano.</p>
-          <a class="cong-btn" href="https://agenda-do-campo.netlify.app/" target="_blank" rel="noopener">Abrir Agenda</a>
+          <span class="tag" data-i18n="agenda_geral_label">Agenda Geral</span>
+          <h3 data-i18n="agenda_geral_titulo">Agenda do Campo</h3>
+          <p data-i18n="agenda_geral_sub">Agenda com todos os eventos</p>
+          <p data-i18n="agenda_geral_texto">Congressos e datas especiais da ADQB ao longo do ano.</p>
+          <a class="cong-btn" href="https://agenda-do-campo.netlify.app/" target="_blank" rel="noopener" data-i18n="abrir_agenda">Abrir Agenda</a>
         </div>
         <div class="cong-card reveal">
           <span class="tag">ADQB</span>
           <h3>Sede</h3>
-          <p>Pastor local:</p>
+          <p data-i18n="pastor_local">Pastor local:</p>
           <p>Pr. Gilson Schinemann &amp; Ir. Rose Schinemann</p>
-          <a class="cong-btn" href="https://agenda-sede.netlify.app/" target="_blank" rel="noopener">Abrir Agenda</a>
+          <a class="cong-btn" href="https://agenda-sede.netlify.app/" target="_blank" rel="noopener" data-i18n="abrir_agenda">Abrir Agenda</a>
         </div>
         <div class="cong-card reveal">
           <span class="tag">ADQB</span>
           <h3>Borda do Campo</h3>
-          <p>Pastor local:</p>
+          <p data-i18n="pastor_local">Pastor local:</p>
           <p>Pr. Paulo dos Santos &amp; Ir. Raquel dos Santos</p>
-          <a class="cong-btn" href="https://borda-do-campo.netlify.app/" target="_blank" rel="noopener">Abrir Agenda</a>
+          <a class="cong-btn" href="https://borda-do-campo.netlify.app/" target="_blank" rel="noopener" data-i18n="abrir_agenda">Abrir Agenda</a>
         </div>
         <div class="cong-card reveal">
           <span class="tag">ADQB</span>
           <h3>Florestal</h3>
-          <p>Pastor local:</p>
+          <p data-i18n="pastor_local">Pastor local:</p>
           <p>Ev. Alon Silva &amp; Ir. Kawany Silva</p>
-          <a class="cong-btn" href="https://florestal.netlify.app/" target="_blank" rel="noopener">Abrir Agenda</a>
+          <a class="cong-btn" href="https://florestal.netlify.app/" target="_blank" rel="noopener" data-i18n="abrir_agenda">Abrir Agenda</a>
         </div>
         <div class="cong-card reveal">
           <span class="tag">ADQB</span>
           <h3>Jardim Graciosa</h3>
-          <p>Pastor local:</p>
+          <p data-i18n="pastor_local">Pastor local:</p>
           <p>Pr. Jose Paes &amp; Ir. Roseni Paes</p>
-          <a class="cong-btn" href="https://jdgraciosa.netlify.app/" target="_blank" rel="noopener">Abrir Agenda</a>
+          <a class="cong-btn" href="https://jdgraciosa.netlify.app/" target="_blank" rel="noopener" data-i18n="abrir_agenda">Abrir Agenda</a>
         </div>
         <div class="cong-card reveal">
           <span class="tag">ADQB</span>
           <h3>Jardim Industrial</h3>
-          <p>Pastor local:</p>
+          <p data-i18n="pastor_local">Pastor local:</p>
           <p>Ev. Clodair Faria &amp; Ir. Vanilda Faria</p>
-          <a class="cong-btn" href="https://jd-industrial.netlify.app/" target="_blank" rel="noopener">Abrir Agenda</a>
+          <a class="cong-btn" href="https://jd-industrial.netlify.app/" target="_blank" rel="noopener" data-i18n="abrir_agenda">Abrir Agenda</a>
         </div>
         <div class="cong-card reveal">
           <span class="tag">ADQB</span>
           <h3>Jardim Menino Deus</h3>
-          <p>Pastor local:</p>
+          <p data-i18n="pastor_local">Pastor local:</p>
           <p>Pr. Edson Silva &amp; Ir. Leni Silva</p>
-          <a class="cong-btn" href="https://jd-menino-deus.netlify.app/" target="_blank" rel="noopener">Abrir Agenda</a>
+          <a class="cong-btn" href="https://jd-menino-deus.netlify.app/" target="_blank" rel="noopener" data-i18n="abrir_agenda">Abrir Agenda</a>
         </div>
         <div class="cong-card reveal">
           <span class="tag">ADQB</span>
           <h3>Palmitalzinho</h3>
-          <p>Pastor local:</p>
+          <p data-i18n="pastor_local">Pastor local:</p>
           <p>Pr. Odair Miquelino &amp; Ir. Rosilene Miquelino</p>
-          <a class="cong-btn" href="https://palmitalzinho.netlify.app/" target="_blank" rel="noopener">Abrir Agenda</a>
+          <a class="cong-btn" href="https://palmitalzinho.netlify.app/" target="_blank" rel="noopener" data-i18n="abrir_agenda">Abrir Agenda</a>
         </div>
         <div class="cong-card reveal">
           <span class="tag">ADQB</span>
           <h3>Jardim Patrícia</h3>
-          <p>Pastor local:</p>
+          <p data-i18n="pastor_local">Pastor local:</p>
           <p>Pr. Erondi Kailer &amp; Ir. Ivone Kailer</p>
-          <a class="cong-btn" href="https://jdpatricia.netlify.app/" target="_blank" rel="noopener">Abrir Agenda</a>
+          <a class="cong-btn" href="https://jdpatricia.netlify.app/" target="_blank" rel="noopener" data-i18n="abrir_agenda">Abrir Agenda</a>
         </div>
         <div class="cong-card reveal">
           <span class="tag">ADQB</span>
           <h3>Pinheirinho</h3>
-          <p>Pastor local:</p>
+          <p data-i18n="pastor_local">Pastor local:</p>
           <p>Pr. Marcio Córdova &amp; Ir. Mirian Córdova</p>
-          <a class="cong-btn" href="https://pinheirinho.netlify.app/" target="_blank" rel="noopener">Abrir Agenda</a>
+          <a class="cong-btn" href="https://pinheirinho.netlify.app/" target="_blank" rel="noopener" data-i18n="abrir_agenda">Abrir Agenda</a>
         </div>
       </div>
 
@@ -691,16 +748,16 @@
 <section class="dark" id="dizimos">
   <div class="wrap dizimos">
     <div class="reveal">
-      <span class="eyebrow">Dízimos e ofertas</span>
-      <h2 style="margin-top:10px; font-size:clamp(2rem,4vw,2.6rem);">Um gesto de fé e gratidão</h2>
-      <blockquote>Contribuir com a obra de Deus é reconhecer que tudo o que temos vem d'Ele — e devolver com alegria uma parte do que recebemos.</blockquote>
-      <p style="color:var(--texto-claro); font-size:.98rem;">Sua contribuição sustenta a manutenção do templo, os projetos sociais e o trabalho missionário da ADQB. Você pode contribuir presencialmente durante os cultos ou pelos dados ao lado.</p>
+      <span class="eyebrow" data-i18n="dizimos_label">Dízimos e ofertas</span>
+      <h2 style="margin-top:10px; font-size:clamp(2rem,4vw,2.6rem);" data-i18n="dizimos_titulo">Um gesto de fé e gratidão</h2>
+      <blockquote data-i18n="dizimos_citacao">Contribuir com a obra de Deus é reconhecer que tudo o que temos vem d'Ele — e devolver com alegria uma parte do que recebemos.</blockquote>
+      <p style="color:var(--texto-claro); font-size:.98rem;" data-i18n="dizimos_texto">Sua contribuição sustenta a manutenção do templo, os projetos sociais e o trabalho missionário da ADQB. Você pode contribuir presencialmente durante os cultos ou pelos dados ao lado.</p>
     </div>
     <div class="pix-card reveal">
-      <h3>Contribua via PIX</h3>
-      <div class="pix-row"><span>Chave PIX</span><span>41 99503-0030</span></div>
+      <h3 data-i18n="dizimos_pix_titulo">Contribua via PIX</h3>
+      <div class="pix-row"><span data-i18n="dizimos_pix_chave">Chave PIX</span><span>41 99503-0030</span></div>
       <div class="pix-row"><span>Assembleia de Deus em Quatro Barras</span></div>
-      <div class="pix-row"><span>Banco</span><span>Itaú</span></div>
+      <div class="pix-row"><span data-i18n="dizimos_pix_banco">Banco</span><span>Itaú</span></div>
       <div class="qr-box"><img src="images/PIX ADQB.png" alt="QR Code para pagamento via PIX - ADQB" width="220" height="220"></div>
     </div>
   </div>
@@ -710,15 +767,15 @@
 <section class="mid" id="missoes">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="eyebrow">Missões</span>
-      <h2>Levando o evangelho além dos nossos muros</h2>
-      <p>Acreditamos que a igreja existe para transformar vidas dentro e fora de Quatro Barras. Apoiamos missionários e projetos que levam esperança a novas comunidades.</p>
+      <span class="eyebrow" data-i18n="missoes_label">Missões</span>
+      <h2 data-i18n="missoes_titulo">Levando o evangelho além dos nossos muros</h2>
+      <p data-i18n="missoes_texto">Acreditamos que a igreja existe para transformar vidas dentro e fora de Quatro Barras. Apoiamos missionários e projetos que levam esperança a novas comunidades.</p>
     </div>
 
     <div class="sec-head reveal" style="margin-top:0;">
-      <span class="eyebrow">Registros</span>
-      <h2 style="font-size:clamp(1.6rem, 3.5vw, 2.1rem);">Nossos trabalhos em ação</h2>
-      <p>Fotos e vídeos das ações sociais e missionárias realizadas pela ADQB.</p>
+      <span class="eyebrow" data-i18n="registros_label">Registros</span>
+      <h2 style="font-size:clamp(1.6rem, 3.5vw, 2.1rem);" data-i18n="registros_titulo">Nossos trabalhos em ação</h2>
+      <p data-i18n="registros_texto">Fotos e vídeos das ações sociais e missionárias realizadas pela ADQB.</p>
     </div>
   </div>
 
@@ -729,23 +786,23 @@
       <div class="miss-media-carousel" id="missMediaCarousel">
         <div class="miss-media-card reveal">
           <video src="images/Moçambique.mp4" controls></video>
-          <p>ADQB em Moçambique</p>
+          <p data-i18n="registros_mocambique">ADQB em Moçambique</p>
         </div>
         <div class="miss-media-card reveal">
           <img src="images/missao-2.jpg" alt="Missão ADQB">
-          <p>Missão</p>
+          <p data-i18n="registros_missao">Missão</p>
         </div>
         <div class="miss-media-card reveal">
           <img src="images/missao-2.jpg" alt="Missão ADQB">
-          <p>Ação Social</p>
+          <p data-i18n="registros_acaosocial">Ação Social</p>
         </div>
         <div class="miss-media-card reveal">
           <img src="images/missao-2.jpg" alt="Missão ADQB">
-          <p>Ação Social</p>
+          <p data-i18n="registros_acaosocial">Ação Social</p>
         </div>
         <div class="miss-media-card reveal">
           <img src="images/missao-2.jpg" alt="Missão ADQB">
-          <p>Legenda da foto 5</p>
+          <p data-i18n="registros_legenda5">Legenda da foto 5</p>
         </div>
       </div>
 
@@ -758,8 +815,8 @@
 <section id="Diretoria">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="eyebrow">MINISTÉRIO</span>
-      <h2>Diretoria ADQB</h2>
+      <span class="eyebrow" data-i18n="diretoria_label">MINISTÉRIO</span>
+      <h2 data-i18n="diretoria_titulo">Diretoria ADQB</h2>
     </div>
   </div>
   <div class="wrap">
@@ -769,37 +826,37 @@
         <div class="lider-card reveal">
           <img class="lider-foto" src="images/diretoria-gilson.png" alt="Pastor Gilson Elias Schinemann">
           <h4>Pr. Gilson Elias Schinemann</h4>
-          <span class="role">Presidente ADQB</span>
+          <span class="role" data-i18n="cargo_presidente">Presidente ADQB</span>
         </div>
         <div class="lider-card reveal">
           <img class="lider-foto" src="images/diretoria-erondi.jpg" alt="Pastor Erondi Fagundes Kailer">
           <h4>Pr. Erondi Fagundes Kailer</h4>
-          <span class="role">Vice-presidente</span>
+          <span class="role" data-i18n="cargo_vice">Vice-presidente</span>
         </div>
         <div class="lider-card reveal">
           <img class="lider-foto" src="images/diretoria-amauri.jpg" alt="Evangelista Amauri Souza Brandão Junior">
           <h4>Ev. Amauri Souza Brandão Junior</h4>
-          <span class="role">Superintendente Administrativo</span>
+          <span class="role" data-i18n="cargo_super_adm">Superintendente Administrativo</span>
         </div>
         <div class="lider-card reveal">
           <img class="lider-foto" src="images/diretoria-rene.jpg" alt="Pastor Rene Deomar Lemos Silvério">
           <h4>Pr. Rene Deomar Lemos Silvério</h4>
-          <span class="role">Superintendente de Obras</span>
+          <span class="role" data-i18n="cargo_super_obras">Superintendente de Obras</span>
         </div>
         <div class="lider-card reveal">
           <img class="lider-foto" src="images/diretoria-carlos.jpg" alt="Evangelista Carlos Souza">
           <h4>Ev. Carlos Souza</h4>
-          <span class="role">Superintendente Financeiro</span>
+          <span class="role" data-i18n="cargo_super_fin">Superintendente Financeiro</span>
         </div>
         <div class="lider-card reveal">
           <img class="lider-foto" src="images/diretoria-alon.jpg" alt="Evangelista Alon da Cruz Silva">
           <h4>Ev. Alon da Cruz Silva</h4>
-          <span class="role">Superintendente do Ministério</span>
+          <span class="role" data-i18n="cargo_super_min">Superintendente do Ministério</span>
         </div>
         <div class="lider-card reveal">
           <img class="lider-foto" src="images/diretoria-jose.jpg" alt="Pastor Jose Carlos">
           <h4>Pr. Jose Carlos</h4>
-          <span class="role">Superintendente de Patrimônio</span>
+          <span class="role" data-i18n="cargo_super_patr">Superintendente de Patrimônio</span>
         </div>
       </div>
       <button class="carousel-btn carousel-next" aria-label="Próximo">›</button>
@@ -814,14 +871,14 @@
       <img src="images/ADQB SEDE.png" alt="Fachada da Assembleia de Deus em Quatro Barras à noite">
     </div>
     <div class="reveal">
-      <span class="eyebrow">Sobre a ADQB</span>
-      <h2 style="margin-top:10px; font-size:clamp(2rem,4vw,2.6rem);">Quem somos</h2>
-      <p style="color:var(--texto-claro); margin-top:16px;">Somos uma igreja evangélica pentecostal comprometida com o ensino da Palavra, a comunhão entre as famílias e o cuidado com a cidade de Quatro Barras. Há 115 anos a Assembleia de Deus caminha no Brasil — e em Quatro Barras seguimos essa mesma missão, de portas abertas para todos.</p>
+      <span class="eyebrow" data-i18n="sobre_label">Sobre a ADQB</span>
+      <h2 style="margin-top:10px; font-size:clamp(2rem,4vw,2.6rem);" data-i18n="sobre_titulo">Quem somos</h2>
+      <p style="color:var(--texto-claro); margin-top:16px;" data-i18n="sobre_texto">Somos uma igreja evangélica pentecostal comprometida com o ensino da Palavra, a comunhão entre as famílias e o cuidado com a cidade de Quatro Barras. Há 115 anos a Assembleia de Deus caminha no Brasil — e em Quatro Barras seguimos essa mesma missão, de portas abertas para todos.</p>
 
       <div class="valores">
-        <div class="valor"><h3>FÉ</h3><p>Confiança na Palavra de Deus como fundamento de tudo o que fazemos.</p></div>
-        <div class="valor"><h3>UNIDADE</h3><p>Uma só igreja, em diversas congregações, caminhando juntas.</p></div>
-        <div class="valor"><h3>MISSÃO</h3><p>Compromisso em levar o evangelho a cada geração e a cada bairro.</p></div>
+        <div class="valor"><h3 data-i18n="valor_fe_titulo">FÉ</h3><p data-i18n="valor_fe_texto">Confiança na Palavra de Deus como fundamento de tudo o que fazemos.</p></div>
+        <div class="valor"><h3 data-i18n="valor_unidade_titulo">UNIDADE</h3><p data-i18n="valor_unidade_texto">Uma só igreja, em diversas congregações, caminhando juntas.</p></div>
+        <div class="valor"><h3 data-i18n="valor_missao_titulo">MISSÃO</h3><p data-i18n="valor_missao_texto">Compromisso em levar o evangelho a cada geração e a cada bairro.</p></div>
       </div>
     </div>
   </div>
@@ -831,9 +888,9 @@
 <section id="midia">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="eyebrow">Mídia</span>
-      <h2>Momentos da nossa igreja</h2>
-      <p>Fotos da igreja e cultos da ADQB.</p>
+      <span class="eyebrow" data-i18n="midia_label">Mídia</span>
+      <h2 data-i18n="midia_titulo">Momentos da nossa igreja</h2>
+      <p data-i18n="midia_texto">Fotos da igreja e cultos da ADQB.</p>
     </div>
     <div class="midia-grid reveal">
       <div class="g1"><img src="images/1 igreja.jpg" alt="Fachada da sede da ADQB"></div>
@@ -862,27 +919,27 @@
           <img src="images/pom.png" alt="Logo pomba ADQB">
           <strong>ADQB</strong>
         </div>
-        <p style="font-size:.88rem; opacity:.7; max-width:280px;">Assembleia de Deus em Quatro Barras. 115 anos de fé, unidade e missão, levando o evangelho e transformando vidas e nações.</p>
+        <p style="font-size:.88rem; opacity:.7; max-width:280px;" data-i18n="footer_desc">Assembleia de Deus em Quatro Barras. 115 anos de fé, unidade e missão, levando o evangelho e transformando vidas e nações.</p>
       </div>
       <div>
-        <h5>Navegação</h5>
+        <h5 data-i18n="footer_nav_titulo">Navegação</h5>
         <ul>
-          <li><a href="#historia">Nossa história</a></li>
-          <li><a href="#congregacoes">Congregações</a></li>
-          <li><a href="#missoes">Missões</a></li>
-          <li><a href="#Diretoria">Diretoria</a></li>
+          <li><a href="#historia" data-i18n="nav_historia">Nossa história</a></li>
+          <li><a href="#congregacoes" data-i18n="nav_congregacoes">Congregações</a></li>
+          <li><a href="#missoes" data-i18n="nav_missoes">Missões</a></li>
+          <li><a href="#Diretoria" data-i18n="nav_diretoria">Diretoria</a></li>
         </ul>
       </div>
       <div>
-        <h5>Igreja</h5>
+        <h5 data-i18n="footer_igreja_titulo">Igreja</h5>
         <ul>
-          <li><a href="#sobre">Sobre</a></li>
-          <li><a href="#midia">Mídia</a></li>
-          <li><a href="#dizimos">Dízimos e ofertas</a></li>
+          <li><a href="#sobre" data-i18n="nav_sobre">Sobre</a></li>
+          <li><a href="#midia" data-i18n="nav_midia">Mídia</a></li>
+          <li><a href="#dizimos" data-i18n="nav_dizimos">Dízimos e ofertas</a></li>
         </ul>
       </div>
       <div>
-        <h5>Contato</h5>
+        <h5 data-i18n="footer_contato_titulo">Contato</h5>
         <ul>
           <li>Rua Manoel Alves dos Santos, n° 5 - Jardim Pinheiros</li>
           <li>(41) 99503-0030</li>
@@ -891,13 +948,241 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 Assembleia de Deus em Quatro Barras. Todos os direitos reservados.</span>
+      <span data-i18n="footer_copyright">© 2026 Assembleia de Deus em Quatro Barras. Todos os direitos reservados.</span>
       <span>Desenvolvido por Alexsander Souza</span>
     </div>
   </div>
 </footer>
 
 <script>
+  const translations = {
+    pt: {
+      brand_sub: "Assembleia de Deus · Quatro Barras",
+      nav_historia: "Nossa História",
+      nav_congregacoes: "Congregações",
+      nav_missoes: "Missões",
+      nav_diretoria: "Diretoria",
+      nav_sobre: "Sobre",
+      nav_midia: "Mídia",
+      nav_dizimos: "Dízimos e Ofertas",
+      nav_sobre_btn: "Sobre nós",
+      nav_dizimos_btn: "Dízimos e Ofertas",
+      nav_aovivo: "AO VIVO",
+
+      ticker_1: "115 ANOS DE ASSEMBLEIA DE DEUS NO BRASIL",
+      ticker_2: "UNIDADE",
+      ticker_3: "MISSÃO",
+      ticker_4: "ASSEMBLEIA DE DEUS EM QUATRO BARRAS",
+      ticker_5: "115 ANOS DE FÉ",
+
+      historia_label: "Nossa história",
+      historia_intro: "De um templo simples erguido pelas mãos da comunidade até a casa que recebe a igreja hoje, cada etapa carrega a mesma missão: levar o evangelho e transformar vidas.",
+      historia_1_label: "As origens",
+      historia_1_titulo: "A Assembleia de Deus chega ao Brasil",
+      historia_1_texto: "Em 1911, a Assembleia de Deus inicia sua história no Brasil, trazendo consigo uma missão de fé que, com o tempo, chegaria a Quatro Barras e a tantas outras cidades do país.",
+      historia_1_legenda: "Nosso primeiro templo",
+      historia_2_label: "Um templo simples",
+      historia_2_titulo: "Construído com fé e trabalho",
+      historia_2_texto: "Nasce em Quatro Barras o primeiro templo da nossa comunidade: simples na estrutura, mas profundo na fé que reunia as famílias em oração, comunhão e ensino da Palavra.",
+      historia_3_label: "Uma missão que cresce",
+      historia_3_titulo: "115 anos de fé, unidade e missão",
+      historia_3_texto: "Ao longo das décadas, novas gerações se levantaram, novas congregações nasceram e o evangelho continuou sendo levado adiante, transformando vidas e famílias em toda a região.",
+      historia_3_legenda: "O igreja Sede da ADQB hoje",
+      historia_4_label: "A mesma fé, uma nova casa",
+      historia_4_titulo: "A Sede que recebe a igreja hoje",
+      historia_4_texto: "Hoje a ADQB conta com um templo sede que reflete o cuidado e o crescimento da nossa história — de portas abertas para receber quem chega, do jeito que sempre foi.",
+
+      congregacoes_label: "Congregações",
+      congregacoes_titulo: "Uma igreja, um só corpo",
+      agenda_geral_label: "Agenda Geral",
+      agenda_geral_titulo: "Agenda do Campo",
+      agenda_geral_sub: "Agenda com todos os eventos",
+      agenda_geral_texto: "Congressos e datas especiais da ADQB ao longo do ano.",
+      abrir_agenda: "Abrir Agenda",
+      pastor_local: "Pastor local:",
+
+      dizimos_label: "Dízimos e ofertas",
+      dizimos_titulo: "Um gesto de fé e gratidão",
+      dizimos_citacao: "Contribuir com a obra de Deus é reconhecer que tudo o que temos vem d'Ele — e devolver com alegria uma parte do que recebemos.",
+      dizimos_texto: "Sua contribuição sustenta a manutenção do templo, os projetos sociais e o trabalho missionário da ADQB. Você pode contribuir presencialmente durante os cultos ou pelos dados ao lado.",
+      dizimos_pix_titulo: "Contribua via PIX",
+      dizimos_pix_chave: "Chave PIX",
+      dizimos_pix_banco: "Banco",
+
+      missoes_label: "Missões",
+      missoes_titulo: "Levando o evangelho além dos nossos muros",
+      missoes_texto: "Acreditamos que a igreja existe para transformar vidas dentro e fora de Quatro Barras. Apoiamos missionários e projetos que levam esperança a novas comunidades.",
+
+      registros_label: "Registros",
+      registros_titulo: "Nossos trabalhos em ação",
+      registros_texto: "Fotos e vídeos das ações sociais e missionárias realizadas pela ADQB.",
+      registros_mocambique: "ADQB em Moçambique",
+      registros_missao: "Missão",
+      registros_acaosocial: "Ação Social",
+      registros_legenda5: "Legenda da foto 5",
+
+      diretoria_label: "MINISTÉRIO",
+      diretoria_titulo: "Diretoria ADQB",
+      cargo_presidente: "Presidente ADQB",
+      cargo_vice: "Vice-presidente",
+      cargo_super_adm: "Superintendente Administrativo",
+      cargo_super_obras: "Superintendente de Obras",
+      cargo_super_fin: "Superintendente Financeiro",
+      cargo_super_min: "Superintendente do Ministério",
+      cargo_super_patr: "Superintendente de Patrimônio",
+
+      sobre_label: "Sobre a ADQB",
+      sobre_titulo: "Quem somos",
+      sobre_texto: "Somos uma igreja evangélica pentecostal comprometida com o ensino da Palavra, a comunhão entre as famílias e o cuidado com a cidade de Quatro Barras. Há 115 anos a Assembleia de Deus caminha no Brasil — e em Quatro Barras seguimos essa mesma missão, de portas abertas para todos.",
+      valor_fe_titulo: "FÉ",
+      valor_fe_texto: "Confiança na Palavra de Deus como fundamento de tudo o que fazemos.",
+      valor_unidade_titulo: "UNIDADE",
+      valor_unidade_texto: "Uma só igreja, em diversas congregações, caminhando juntas.",
+      valor_missao_titulo: "MISSÃO",
+      valor_missao_texto: "Compromisso em levar o evangelho a cada geração e a cada bairro.",
+
+      midia_label: "Mídia",
+      midia_titulo: "Momentos da nossa igreja",
+      midia_texto: "Fotos da igreja e cultos da ADQB.",
+
+      footer_desc: "Assembleia de Deus em Quatro Barras. 115 anos de fé, unidade e missão, levando o evangelho e transformando vidas e nações.",
+      footer_nav_titulo: "Navegação",
+      footer_igreja_titulo: "Igreja",
+      footer_contato_titulo: "Contato",
+      footer_copyright: "© 2026 Assembleia de Deus em Quatro Barras. Todos os direitos reservados.",
+    },
+    en: {
+      brand_sub: "Assembly of God · Quatro Barras",
+      nav_historia: "Our History",
+      nav_congregacoes: "Congregations",
+      nav_missoes: "Missions",
+      nav_diretoria: "Board",
+      nav_sobre: "About",
+      nav_midia: "Media",
+      nav_dizimos: "Tithes & Offerings",
+      nav_sobre_btn: "About Us",
+      nav_dizimos_btn: "Tithes & Offerings",
+      nav_aovivo: "LIVE",
+
+      ticker_1: "115 YEARS OF THE ASSEMBLIES OF GOD IN BRAZIL",
+      ticker_2: "UNITY",
+      ticker_3: "MISSION",
+      ticker_4: "ASSEMBLY OF GOD IN QUATRO BARRAS",
+      ticker_5: "115 YEARS OF FAITH",
+
+      historia_label: "Our history",
+      historia_intro: "From a simple temple built by the hands of the community to the home that welcomes the church today, every step carries the same mission: to spread the gospel and transform lives.",
+      historia_1_label: "The origins",
+      historia_1_titulo: "The Assemblies of God arrive in Brazil",
+      historia_1_texto: "In 1911, the Assemblies of God began their story in Brazil, carrying a mission of faith that would, over time, reach Quatro Barras and so many other cities across the country.",
+      historia_1_legenda: "Our first temple",
+      historia_2_label: "A simple temple",
+      historia_2_titulo: "Built with faith and hard work",
+      historia_2_texto: "The first temple of our community was born in Quatro Barras: simple in structure, but deep in the faith that brought families together in prayer, fellowship, and the teaching of the Word.",
+      historia_3_label: "A growing mission",
+      historia_3_titulo: "115 years of faith, unity and mission",
+      historia_3_texto: "Over the decades, new generations rose up, new congregations were born, and the gospel kept moving forward, transforming lives and families throughout the region.",
+      historia_3_legenda: "ADQB's main church today",
+      historia_4_label: "The same faith, a new home",
+      historia_4_titulo: "The main church that welcomes us today",
+      historia_4_texto: "Today ADQB has a main church building that reflects the care and growth of our history — doors open to welcome all who arrive, just as it has always been.",
+
+      congregacoes_label: "Congregations",
+      congregacoes_titulo: "One church, one body",
+      agenda_geral_label: "General Calendar",
+      agenda_geral_titulo: "Field Calendar",
+      agenda_geral_sub: "Calendar with all events",
+      agenda_geral_texto: "ADQB conferences and special dates throughout the year.",
+      abrir_agenda: "Open Calendar",
+      pastor_local: "Local pastor:",
+
+      dizimos_label: "Tithes and offerings",
+      dizimos_titulo: "A gesture of faith and gratitude",
+      dizimos_citacao: "Contributing to God's work is recognizing that everything we have comes from Him — and joyfully giving back a part of what we've received.",
+      dizimos_texto: "Your contribution supports the upkeep of the church, social projects, and ADQB's missionary work. You can give in person during services or using the details alongside.",
+      dizimos_pix_titulo: "Give via PIX",
+      dizimos_pix_chave: "PIX key",
+      dizimos_pix_banco: "Bank",
+
+      missoes_label: "Missions",
+      missoes_titulo: "Carrying the gospel beyond our walls",
+      missoes_texto: "We believe the church exists to transform lives in and beyond Quatro Barras. We support missionaries and projects that bring hope to new communities.",
+
+      registros_label: "Records",
+      registros_titulo: "Our work in action",
+      registros_texto: "Photos and videos of ADQB's social and missionary work.",
+      registros_mocambique: "ADQB in Mozambique",
+      registros_missao: "Mission",
+      registros_acaosocial: "Social Outreach",
+      registros_legenda5: "Photo caption 5",
+
+      diretoria_label: "MINISTRY",
+      diretoria_titulo: "ADQB Board",
+      cargo_presidente: "ADQB President",
+      cargo_vice: "Vice President",
+      cargo_super_adm: "Administrative Superintendent",
+      cargo_super_obras: "Superintendent of Works",
+      cargo_super_fin: "Financial Superintendent",
+      cargo_super_min: "Ministry Superintendent",
+      cargo_super_patr: "Property Superintendent",
+
+      sobre_label: "About ADQB",
+      sobre_titulo: "Who we are",
+      sobre_texto: "We are a Pentecostal evangelical church committed to teaching the Word, fellowship among families, and caring for the city of Quatro Barras. For 115 years the Assemblies of God has walked in Brazil — and in Quatro Barras we carry on that same mission, with doors open to all.",
+      valor_fe_titulo: "FAITH",
+      valor_fe_texto: "Trust in the Word of God as the foundation of everything we do.",
+      valor_unidade_titulo: "UNITY",
+      valor_unidade_texto: "One church, in many congregations, walking together.",
+      valor_missao_titulo: "MISSION",
+      valor_missao_texto: "Committed to bringing the gospel to every generation and every neighborhood.",
+
+      midia_label: "Media",
+      midia_titulo: "Moments from our church",
+      midia_texto: "Photos of the church and ADQB services.",
+
+      footer_desc: "Assembly of God in Quatro Barras. 115 years of faith, unity, and mission, spreading the gospel and transforming lives and nations.",
+      footer_nav_titulo: "Navigation",
+      footer_igreja_titulo: "Church",
+      footer_contato_titulo: "Contact",
+      footer_copyright: "© 2026 Assembly of God in Quatro Barras. All rights reserved.",
+    }
+  };
+
+  const historiaTituloHTML = {
+    pt: 'Uma trajetória de <span class="script">fé</span> em Quatro Barras',
+    en: 'A journey of <span class="script">faith</span> in Quatro Barras'
+  };
+
+  function applyLanguage(lang) {
+    const dict = translations[lang] || translations.pt;
+    document.querySelectorAll("[data-i18n]").forEach((el) => {
+      const key = el.getAttribute("data-i18n");
+      if (dict[key] !== undefined) el.textContent = dict[key];
+    });
+    document.querySelectorAll("[data-i18n-html]").forEach((el) => {
+      const key = el.getAttribute("data-i18n-html");
+      if (key === "historia_titulo_html") el.innerHTML = historiaTituloHTML[lang];
+    });
+    document.documentElement.lang = lang === "en" ? "en-US" : "pt-BR";
+    document.body.classList.toggle("lang-en", lang === "en");
+    const ptBtn = document.getElementById("lang-pt");
+    const enBtn = document.getElementById("lang-en");
+    if (ptBtn && enBtn) {
+      ptBtn.classList.toggle("active", lang === "pt");
+      enBtn.classList.toggle("active", lang === "en");
+    }
+  }
+
+  function setLanguage(lang) {
+    localStorage.setItem("adqb-lang", lang);
+    applyLanguage(lang);
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const saved = localStorage.getItem("adqb-lang") || "pt";
+    applyLanguage(saved);
+  });
+
   const header = document.getElementById('siteHeader');
   window.addEventListener('scroll', () => {
     header.classList.toggle('scrolled', window.scrollY > 40);
