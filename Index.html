@@ -83,6 +83,7 @@
   }
   nav.wrap{ display:flex; align-items:center; justify-content:space-between; gap:20px;}
   .nav-right{ display:flex; align-items:center; gap:22px; }
+  .nav-actions{ display:flex; flex-direction:column; align-items:center; gap:8px; }
   .brand{ display:flex; align-items:center; gap:3px; }
   .brand img{
     width:56px; height:96px;
@@ -509,6 +510,183 @@
     box-shadow: 0 0 0 1px rgba(178,34,52,.6);
   }
   .lang-toggle button:focus-visible{ outline:2px solid var(--dourado); outline-offset:2px; }
+
+  /* =========================================================
+     STARK HUD — camada 3D / glow / holográfica
+     ========================================================= */
+  body{ perspective: 1500px; }
+
+  /* grade holográfica de fundo, fixa, sutil */
+  body::before{
+    content:'';
+    position:fixed; inset:0; z-index:0; pointer-events:none;
+    background-image:
+      linear-gradient(rgba(201,165,74,.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,165,74,.05) 1px, transparent 1px);
+    background-size: 42px 42px;
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 0%, transparent 70%);
+    opacity:.5;
+    transition: background-image .6s ease;
+  }
+  body.lang-en::before{
+    background-image:
+      linear-gradient(rgba(111,168,220,.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(111,168,220,.06) 1px, transparent 1px);
+  }
+
+  /* linha de scan pulsante no topo do header */
+  header::after{
+    content:'';
+    position:absolute; left:0; right:0; bottom:0; height:1px;
+    background: linear-gradient(90deg, transparent, var(--dourado), transparent);
+    opacity:.7;
+    animation: scanline 4s ease-in-out infinite;
+  }
+  @keyframes scanline{
+    0%,100%{ opacity:.25; transform:scaleX(.7); }
+    50%{ opacity:.9; transform:scaleX(1); }
+  }
+
+  /* logo com brilho tipo reator */
+  .brand img{
+    animation: reactor-pulse 3.2s ease-in-out infinite;
+  }
+  @keyframes reactor-pulse{
+    0%,100%{ filter: drop-shadow(0 0 6px rgba(201,165,74,.55)) drop-shadow(0 0 2px rgba(0,0,0,.6)); }
+    50%{ filter: drop-shadow(0 0 16px rgba(201,165,74,.95)) drop-shadow(0 0 4px rgba(0,0,0,.6)); }
+  }
+  body.lang-en .brand img{ animation-name: reactor-pulse-en; }
+  @keyframes reactor-pulse-en{
+    0%,100%{ filter: drop-shadow(0 0 6px rgba(111,168,220,.55)) drop-shadow(0 0 2px rgba(0,0,0,.6)); }
+    50%{ filter: drop-shadow(0 0 18px rgba(111,168,220,1)) drop-shadow(0 0 4px rgba(0,0,0,.6)); }
+  }
+
+  /* cantos HUD + vidro fosco nos cards */
+  .cong-card, .lider-card, .pix-card, .miss-media-card{
+    position:relative;
+    background: linear-gradient(160deg, rgba(246,241,228,.94), rgba(246,241,228,.86));
+    backdrop-filter: blur(6px);
+    transform-style: preserve-3d;
+    will-change: transform;
+    box-shadow: 0 10px 30px rgba(0,0,0,.18);
+  }
+  .miss-media-card{ background: rgba(7,19,16,.4); }
+
+  .cong-card::after, .lider-card::after, .pix-card::after{
+    content:'';
+    position:absolute; inset:0; pointer-events:none; border-radius:inherit;
+    background:
+      linear-gradient(var(--dourado), var(--dourado)) top left / 16px 2px no-repeat,
+      linear-gradient(var(--dourado), var(--dourado)) top left / 2px 16px no-repeat,
+      linear-gradient(var(--dourado), var(--dourado)) bottom right / 16px 2px no-repeat,
+      linear-gradient(var(--dourado), var(--dourado)) bottom right / 2px 16px no-repeat;
+    opacity:.55;
+  }
+
+  .cong-card:hover, .lider-card:hover, .pix-card:hover, .miss-media-card:hover{
+    box-shadow: 0 18px 46px rgba(0,0,0,.28), 0 0 0 1px var(--dourado-suave), 0 0 26px var(--dourado-suave);
+  }
+
+  /* botões com brilho neon estilo repulsor */
+  .btn, .cong-btn, .nav-cta{
+    position:relative;
+    overflow:hidden;
+  }
+  .btn-gold, .cong-btn{
+    box-shadow: 0 0 0 1px rgba(0,0,0,.05), 0 6px 18px rgba(201,165,74,.35);
+  }
+  .btn-gold:hover, .cong-btn:hover{
+    box-shadow: 0 0 0 1px rgba(0,0,0,.05), 0 8px 28px rgba(201,165,74,.65), 0 0 24px rgba(201,165,74,.55);
+  }
+  .btn-live{
+    box-shadow: 0 6px 18px rgba(184,40,58,.45);
+  }
+  .btn-live:hover{
+    box-shadow: 0 8px 28px rgba(184,40,58,.7), 0 0 22px rgba(184,40,58,.55);
+  }
+  .btn::before, .cong-btn::before, .nav-cta::before{
+    content:'';
+    position:absolute; top:0; left:-120%; width:60%; height:100%;
+    background: linear-gradient(115deg, transparent, rgba(255,255,255,.55), transparent);
+    transform: skewX(-20deg);
+    transition: left .6s ease;
+  }
+  .btn:hover::before, .cong-btn:hover::before, .nav-cta:hover::before{ left:140%; }
+
+  /* eyebrow com leve brilho de texto */
+  .eyebrow{ text-shadow: 0 0 12px var(--dourado-suave); }
+
+  /* seções escuras ganham profundidade extra */
+  section.dark, section.mid{
+    box-shadow: inset 0 40px 60px -50px rgba(0,0,0,.6), inset 0 -40px 60px -50px rgba(0,0,0,.6);
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .brand img, header::after{ animation:none !important; }
+  }
+
+  /* =========================================================
+     PORTAIS DIMENSIONAIS — carrosséis chegando de outro universo
+     ========================================================= */
+  .carousel-wrap{ position:relative; }
+  .carousel-wrap::before{
+    content:'';
+    position:absolute; left:6%; right:6%; top:-16px; height:1px;
+    background: linear-gradient(90deg, transparent, var(--dourado), transparent);
+    opacity:.35;
+    animation: portal-beam 3.4s ease-in-out infinite;
+  }
+  @keyframes portal-beam{
+    0%,100%{ opacity:.15; transform:scaleX(.55); }
+    50%{ opacity:.85; transform:scaleX(1); }
+  }
+
+  .cong-carousel, .lideranca-carousel, .miss-media-carousel{
+    perspective: 1400px;
+  }
+
+  .cong-card.reveal,
+  .lider-card.reveal,
+  .miss-media-card.reveal{
+    opacity:0;
+    transform: perspective(1400px) translateZ(-420px) translateY(90px) rotateX(38deg) rotateY(-18deg) scale(.45);
+    filter: blur(7px) brightness(2.1) saturate(1.5);
+    transition: opacity .95s cubic-bezier(.16,.84,.28,1.05),
+                transform .95s cubic-bezier(.16,.84,.28,1.05),
+                filter .95s ease;
+  }
+  .cong-card.reveal.in,
+  .lider-card.reveal.in,
+  .miss-media-card.reveal.in{
+    opacity:1;
+    transform: perspective(1400px) translateZ(0) translateY(0) rotateX(0) rotateY(0) scale(1);
+    filter: blur(0) brightness(1) saturate(1);
+    animation: portal-flash 1s ease-out;
+  }
+  @keyframes portal-flash{
+    0%{ box-shadow: 0 0 0 0 var(--dourado-suave), 0 0 70px 14px var(--dourado-suave); }
+    100%{ box-shadow: 0 10px 30px rgba(0,0,0,.18); }
+  }
+
+  /* atraso escalonado — efeito de teletransporte em cascata */
+  .cong-carousel .cong-card:nth-child(1), .lideranca-carousel .lider-card:nth-child(1), .miss-media-carousel .miss-media-card:nth-child(1){ transition-delay:.02s; }
+  .cong-carousel .cong-card:nth-child(2), .lideranca-carousel .lider-card:nth-child(2), .miss-media-carousel .miss-media-card:nth-child(2){ transition-delay:.08s; }
+  .cong-carousel .cong-card:nth-child(3), .lideranca-carousel .lider-card:nth-child(3), .miss-media-carousel .miss-media-card:nth-child(3){ transition-delay:.14s; }
+  .cong-carousel .cong-card:nth-child(4), .lideranca-carousel .lider-card:nth-child(4), .miss-media-carousel .miss-media-card:nth-child(4){ transition-delay:.20s; }
+  .cong-carousel .cong-card:nth-child(5), .lideranca-carousel .lider-card:nth-child(5), .miss-media-carousel .miss-media-card:nth-child(5){ transition-delay:.26s; }
+  .cong-carousel .cong-card:nth-child(6), .lideranca-carousel .lider-card:nth-child(6){ transition-delay:.32s; }
+  .cong-carousel .cong-card:nth-child(7), .lideranca-carousel .lider-card:nth-child(7){ transition-delay:.38s; }
+  .cong-carousel .cong-card:nth-child(8){ transition-delay:.44s; }
+  .cong-carousel .cong-card:nth-child(9){ transition-delay:.50s; }
+  .cong-carousel .cong-card:nth-child(10){ transition-delay:.56s; }
+
+  @media (prefers-reduced-motion: reduce){
+    .cong-card.reveal, .lider-card.reveal, .miss-media-card.reveal,
+    .cong-card.reveal.in, .lider-card.reveal.in, .miss-media-card.reveal.in{
+      transform:none; filter:none; animation:none;
+    }
+    .carousel-wrap::before{ animation:none; }
+  }
 </style>
 </head>
 <body>
@@ -529,13 +707,14 @@
         <li><a href="#midia" data-i18n="nav_midia">Mídia</a></li>
         <li><a href="#dizimos" class="nav-cta" data-i18n="nav_dizimos">Dízimos e Ofertas</a></li>
       </ul>
-      <div class="lang-toggle">
-        <button id="lang-pt" onclick="setLanguage('pt')" aria-label="Português (Brasil)">🇧🇷</button>
-        <button id="lang-en" onclick="setLanguage('en')" aria-label="English (US)">🇺🇸</button>
+      <div class="nav-actions">
+        <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
+        <div class="lang-toggle">
+          <button id="lang-pt" onclick="setLanguage('pt')" aria-label="Português (Brasil)">🇧🇷</button>
+          <button id="lang-en" onclick="setLanguage('en')" aria-label="English (US)">🇺🇸</button>
+        </div>
       </div>
-      <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
-    </div>
-  </nav>
+    </div>  </nav>
 </header>
 
 <section class="hero" id="inicio">
@@ -1248,6 +1427,34 @@
       }
       // Desktop: segue o href normal (abre no navegador/YouTube)
     });
+  }
+
+  // ---- Efeito 3D estilo HUD nos cards (tilt ao passar o mouse) ----
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isTouch = window.matchMedia('(hover: none)').matches;
+
+  if (!prefersReducedMotion && !isTouch) {
+    document.querySelectorAll('.cong-card, .lider-card, .pix-card, .miss-media-card').forEach((card) => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+        card.style.transform = `perspective(700px) rotateX(${(-y * 10).toFixed(2)}deg) rotateY(${(x * 10).toFixed(2)}deg) translateZ(10px)`;
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = '';
+      });
+    });
+
+    // Leve paralaxe no hero conforme o mouse se move
+    const hero = document.querySelector('.hero');
+    if (hero) {
+      hero.addEventListener('mousemove', (e) => {
+        const x = (e.clientX / window.innerWidth - 0.5) * 12;
+        const y = (e.clientY / window.innerHeight - 0.5) * 12;
+        hero.style.backgroundPosition = `${50 + x}% ${30 + y}%`;
+      });
+    }
   }
 </script>
 </body>
