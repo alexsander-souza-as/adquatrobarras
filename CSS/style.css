@@ -117,12 +117,12 @@
 
   /* ---------- NAV ---------- */
   header {
-    position: fixed;
-    top: 0;
+    position:fixed;
+    top: 9px;
     left: 0;
-    right: 0;
+    right: 8px;
     z-index: 1000;
-    padding: 18px 0;
+    padding: 15px 0px;
     transition: background .35s ease, padding .35s ease, box-shadow .35s ease;
   }
 
@@ -134,34 +134,34 @@
   }
 
   nav.wrap {
-    display: flex;
-    align-items: center;
+    display:flex;
+    align-items: flex-start;
     justify-content: space-between;
-    gap: 20px;
+    gap: 25px;
   }
 
   .nav-right {
     display: flex;
-    align-items: center;
-    gap: 22px;
+    align-items: flex-end;
+    gap: 10px;
   }
 
   .nav-actions {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 8px;
+    align-items: flex-end;
+    gap: 15px;
   }
 
   .brand {
     display: flex;
-    align-items: center;
-    gap: 3px;
+    align-items: flex-start;
+    gap: 15px;
   }
 
   .brand img {
-    width: 56px;
-    height: 96px;
+    width: 100px;
+    height: 65px;
     object-fit: contain;
     filter: drop-shadow(0 0 8px rgba(201, 165, 74, .5)) drop-shadow(0 0 3px rgba(0, 0, 0, .6));
   }
@@ -169,13 +169,13 @@
   .brand-text {
     display: flex;
     flex-direction: column;
-    line-height: 1.05;
+    line-height: 1.00;
   }
 
   .brand-text strong {
     font-family: var(--serif);
     color: var(--marfim);
-    font-size: 1.15rem;
+    font-size: 1.90rem;
     letter-spacing: .03em;
   }
 
@@ -183,7 +183,7 @@
     font-family: var(--sans);
     color: var(--dourado);
     font-size: .62rem;
-    letter-spacing: .18em;
+    letter-spacing: .25em;
     text-transform: uppercase;
   }
 
@@ -279,21 +279,21 @@
   /* ---------- HERO ---------- */
 
 
-  .hero{
-  position:relative;
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-end;
+  .hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 
   background:
     linear-gradient(
-      180deg,
+      300deg,
       rgba(7,19,16,.35) 0%,
       rgba(7,19,16,.35) 45%,
       rgba(7,19,16,.96) 100%
     ),
-    var(--verde-profundo) url('../images/115 anos adqb.png') center 30% / cover no-repeat;
+    var(--verde-profundo) url('../images/115 anos adqb.png') center 100% / 150% 90% no-repeat;
 }
 
   .hero-cta-row {
@@ -309,6 +309,7 @@
     align-items: center;
   }
 
+  
   .btn {
     display: inline-flex;
     align-items: center;
@@ -1149,7 +1150,7 @@
   /* ---------- SELETOR DE IDIOMA ---------- */
   .lang-toggle {
     display: inline-flex;
-    align-items: center;
+    align-items: flex-end;
     gap: 2px;
     background: rgba(246, 241, 228, .06);
     border: 1px solid rgba(201, 165, 74, .3);
