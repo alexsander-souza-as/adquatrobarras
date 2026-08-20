@@ -98,6 +98,17 @@
     color: var(--dourado);
   }
 
+  /* ---------- Tema ES: paleta vermelho/dourado (Espanha) ---------- */
+body.lang-es{
+  --verde-profundo:#450a0a;
+  --verde-medio:#6b1414;
+  --verde-suave:#8f1c1c;
+  --preto:#2b0606;
+  --dourado:#f1bf00;
+  --dourado-claro:#ffd93d;
+  --dourado-suave: rgba(241,191,0,.35);
+}
+
   /* ---------- reduced motion ---------- */
   @media (prefers-reduced-motion: reduce) {
     * {
@@ -1188,6 +1199,7 @@
     box-shadow: 0 0 0 1px rgba(178, 34, 52, .6);
   }
 
+  
   .lang-toggle button:focus-visible {
     outline: 2px solid var(--dourado);
     outline-offset: 2px;

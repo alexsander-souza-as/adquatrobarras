@@ -189,11 +189,108 @@
       footer_contato_titulo: "Contact",
       footer_copyright: "© 2026 Assembly of God in Quatro Barras. All rights reserved.",
     }
+
+    es: {
+  brand_sub: "Asamblea de Dios · Quatro Barras",
+  nav_historia: "Nuestra Historia",
+  nav_congregacoes: "Congregaciones",
+  nav_missoes: "Misiones",
+  nav_diretoria: "Directiva",
+  nav_sobre: "Nosotros",
+  nav_midia: "Medios",
+  nav_dizimos: "Diezmos y Ofrendas",
+  nav_sobre_btn: "Sobre Nosotros",
+  nav_dizimos_btn: "Diezmos y Ofrendas",
+  nav_aovivo: "EN VIVO",
+
+  ticker_1: "115 AÑOS DE LA ASAMBLEA DE DIOS EN BRASIL",
+  ticker_2: "UNIDAD",
+  ticker_3: "MISIÓN",
+  ticker_4: "ASAMBLEA DE DIOS EN QUATRO BARRAS",
+  ticker_5: "115 AÑOS DE FE",
+
+  historia_label: "Nuestra historia",
+  historia_intro: "Desde un templo sencillo levantado por las manos de la comunidad hasta la casa que hoy recibe a la iglesia, cada etapa lleva la misma misión: llevar el evangelio y transformar vidas.",
+  historia_1_label: "Los orígenes",
+  historia_1_titulo: "La Asamblea de Dios llega a Brasil",
+  historia_1_texto: "En 1911, la Asamblea de Dios inicia su historia en Brasil, trayendo consigo una misión de fe que, con el tiempo, llegaría a Quatro Barras y a tantas otras ciudades del país.",
+  historia_1_legenda: "Nuestro primer templo",
+  historia_2_label: "Un templo sencillo",
+  historia_2_titulo: "Construido con fe y trabajo",
+  historia_2_texto: "Nace en Quatro Barras el primer templo de nuestra comunidad: sencillo en su estructura, pero profundo en la fe que reunía a las familias en oración, comunión y enseñanza de la Palabra.",
+  historia_3_label: "Una misión que crece",
+  historia_3_titulo: "115 años de fe, unidad y misión",
+  historia_3_texto: "A lo largo de las décadas, nuevas generaciones se levantaron, nuevas congregaciones nacieron y el evangelio siguió avanzando, transformando vidas y familias en toda la región.",
+  historia_3_legenda: "La sede de la ADQB hoy",
+  historia_4_label: "La misma fe, una nueva casa",
+  historia_4_titulo: "La Sede que recibe a la iglesia hoy",
+  historia_4_texto: "Hoy la ADQB cuenta con un templo sede que refleja el cuidado y el crecimiento de nuestra historia, con las puertas abiertas para recibir a quien llega, tal como siempre fue.",
+
+  congregacoes_label: "Congregaciones",
+  congregacoes_titulo: "Una iglesia, un solo cuerpo",
+  agenda_geral_label: "Agenda General",
+  agenda_geral_titulo: "Agenda del Campo",
+  agenda_geral_sub: "Agenda con todos los eventos",
+  agenda_geral_texto: "Congresos y fechas especiales de la ADQB durante el año.",
+  abrir_agenda: "Abrir Agenda",
+  pastor_local: "Pastor local:",
+
+  dizimos_label: "Diezmos y ofrendas",
+  dizimos_titulo: "Un gesto de fe y gratitud",
+  dizimos_citacao: "Contribuir con la obra de Dios es reconocer que todo lo que tenemos viene de Él, y devolver con alegría una parte de lo que hemos recibido.",
+  dizimos_texto: "Tu contribución sostiene el mantenimiento del templo, los proyectos sociales y el trabajo misionero de la ADQB. Puedes contribuir presencialmente durante los cultos o con los datos al lado.",
+  dizimos_pix_titulo: "Contribuye vía PIX",
+  dizimos_pix_chave: "Clave PIX",
+  dizimos_pix_banco: "Banco",
+
+  missoes_label: "Misiones",
+  missoes_titulo: "Llevando el evangelio más allá de nuestros muros",
+  missoes_texto: "Creemos que la iglesia existe para transformar vidas dentro y fuera de Quatro Barras. Apoyamos misioneros y proyectos que llevan esperanza a nuevas comunidades.",
+
+  registros_label: "Registros",
+  registros_titulo: "Nuestro trabajo en acción",
+  registros_texto: "Fotos y videos de las acciones sociales y misioneras realizadas por la ADQB.",
+  registros_mocambique: "ADQB en Mozambique",
+  registros_missao: "Misión",
+  registros_acaosocial: "Acción Social",
+  registros_legenda5: "Leyenda de la foto 5",
+
+  diretoria_label: "MINISTERIO",
+  diretoria_titulo: "Directiva ADQB",
+  cargo_presidente: "Presidente ADQB",
+  cargo_vice: "Vicepresidente",
+  cargo_super_adm: "Superintendente Administrativo",
+  cargo_super_obras: "Superintendente de Obras",
+  cargo_super_fin: "Superintendente Financiero",
+  cargo_super_min: "Superintendente del Ministerio",
+  cargo_super_patr: "Superintendente de Patrimonio",
+
+  sobre_label: "Sobre la ADQB",
+  sobre_titulo: "Quiénes somos",
+  sobre_texto: "Somos una iglesia evangélica pentecostal comprometida con la enseñanza de la Palabra, la comunión entre las familias y el cuidado de la ciudad de Quatro Barras. Hace 115 años la Asamblea de Dios camina en Brasil, y en Quatro Barras seguimos esa misma misión, con las puertas abiertas para todos.",
+  valor_fe_titulo: "FE",
+  valor_fe_texto: "Confianza en la Palabra de Dios como fundamento de todo lo que hacemos.",
+  valor_unidade_titulo: "UNIDAD",
+  valor_unidade_texto: "Una sola iglesia, en diversas congregaciones, caminando juntas.",
+  valor_missao_titulo: "MISIÓN",
+  valor_missao_texto: "Compromiso de llevar el evangelio a cada generación y a cada barrio.",
+
+  midia_label: "Medios",
+  midia_titulo: "Momentos de nuestra iglesia",
+  midia_texto: "Fotos de la iglesia y de los cultos de la ADQB.",
+
+  footer_desc: "Asamblea de Dios en Quatro Barras. 115 años de fe, unidad y misión, llevando el evangelio y transformando vidas y naciones.",
+  footer_nav_titulo: "Navegación",
+  footer_igreja_titulo: "Iglesia",
+  footer_contato_titulo: "Contacto",
+  footer_copyright: "© 2026 Asamblea de Dios en Quatro Barras. Todos los derechos reservados.",
+}
   };
 
   const historiaTituloHTML = {
     pt: 'Uma trajetória de <span class="script">fé</span> em Quatro Barras',
     en: 'A journey of <span class="script">faith</span> in Quatro Barras'
+    es: 'Una trayectoria de <span class="script">fe</span> en Quatro Barras'
   };
 
   function applyLanguage(lang) {
@@ -215,6 +312,7 @@
       enBtn.classList.toggle("active", lang === "en");
     }
   }
+  
 
   function setLanguage(lang) {
     localStorage.setItem("adqb-lang", lang);
