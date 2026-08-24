@@ -62,8 +62,8 @@
       registros_mocambique: "ADQB em Moçambique",
       registros_missao: "Congresso de Missões",
       registros_congresso: "Congresso de Missões",
-      registros_video: "Legenda da foto 5",
-      registros_missao_fora: "ADQB fora de 4 paredes",
+      registros_video: "ADQB fora de 4 paredes",
+      registros_missao_fora: "Evangelismo",
 
       diretoria_label: "MINISTÉRIO",
       diretoria_titulo: "Diretoria ADQB",
@@ -157,8 +157,9 @@
       registros_texto: "Photos and videos of ADQB's social and missionary work.",
       registros_mocambique: "ADQB in Mozambique",
       registros_missao: "Mission",
-      registros_acaosocial: "Social Outreach",
-      registros_legenda5: "Photo caption 5",
+      registros_congresso: "Mission",
+      registros_video: "ADQB Beyond Four Walls",
+      registros_missao_fora: "Mission",
 
       diretoria_label: "MINISTRY",
       diretoria_titulo: "ADQB Board",
