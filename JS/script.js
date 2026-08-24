@@ -60,9 +60,10 @@
       registros_titulo: "Nossos trabalhos em ação",
       registros_texto: "Fotos e vídeos das ações sociais e missionárias realizadas pela ADQB.",
       registros_mocambique: "ADQB em Moçambique",
-      registros_missao: "Missão",
-      registros_acaosocial: "Ação Social",
-      registros_legenda5: "Legenda da foto 5",
+      registros_missao: "Congresso de Missões",
+      registros_congresso: "Congresso de Missões",
+      registros_video: "Legenda da foto 5",
+      registros_missao_fora: "ADQB fora de 4 paredes",
 
       diretoria_label: "MINISTÉRIO",
       diretoria_titulo: "Diretoria ADQB",
