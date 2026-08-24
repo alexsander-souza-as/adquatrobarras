@@ -675,11 +675,11 @@
   .btn::before, .cong-btn::before, .nav-cta::before{
     content:'';
     position:absolute; top:0; left:-120%; width:60%; height:100%;
-    background: linear-gradient(115deg, transparent, rgba(255,255,255,.55), transparent);
+    /*background: linear-gradient(115deg, transparent, rgba(158, 9, 9, 0.55), transparent);*/
     transform: skewX(-20deg);
     transition: left .6s ease;
   }
-  .btn:hover::before, .cong-btn:hover::before, .nav-cta:hover::before{ left:140%; }
+  .btn:hover::before, .cong-btn:hover::before, .nav-cta:hover{ left:140%; }
 
   /* eyebrow com leve brilho de texto */
   .eyebrow{ text-shadow: 0 0 12px var(--dourado-suave); }
