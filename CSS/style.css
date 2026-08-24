@@ -742,6 +742,11 @@ body.lang-es{
     margin-bottom: 18px;
   }
 
+  .pix-card h4 {
+    font-size: 1.3rem;
+    margin-bottom: 18px;
+  }
+
   .pix-row {
     display: flex;
     justify-content: space-between;
